@@ -55,6 +55,7 @@
     "carbon-components": "10.9.3",
     "carbon-components-react": "7.9.3",
     "classnames": "^2.2.5",
+    "color": "^3.1.2",
     "downshift": "^1.31.14",
     "export-to-csv": "^0.2.1",
     "flatpickr": "^4.6.1",

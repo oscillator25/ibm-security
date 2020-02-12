@@ -3,6 +3,7 @@
  * @copyright IBM Security 2019
  */
 
+import Color from 'color';
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import { throttle } from 'throttle-debounce';
@@ -181,8 +182,27 @@ class ScrollGradient extends Component {
       ...other
     } = this.props;
     const { position } = this.state;
-    const gradientRotation =
-      direction === ScrollGradient.ScrollDirection.X ? -90 : 0;
+
+    const computedColor = color.startsWith('var')
+      ? isClient() &&
+        getComputedStyle(document.documentElement)
+          .getPropertyValue(
+            color.substring(color.indexOf('(') + 1, color.indexOf(','))
+          )
+          .trim()
+      : color;
+
+    let linearGradient = '';
+
+    if (computedColor) {
+      const convertedColor = Color(computedColor);
+
+      linearGradient = `${convertedColor
+        .fade(1)
+        .string()}, ${convertedColor.string()}`;
+    }
+
+    const isDirectionX = direction === ScrollGradient.ScrollDirection.X;
 
     return (
       <div
@@ -199,7 +219,9 @@ class ScrollGradient extends Component {
           <div
             className={`${namespace}__before`}
             style={{
-              backgroundImage: `linear-gradient(${gradientRotation}deg, rgba(0,0,0,0), ${color} 90%)`,
+              backgroundImage: `linear-gradient(to ${
+                isDirectionX ? 'left' : 'top'
+              }, ${linearGradient})`,
             }}
             role="presentation"
             aria-hidden
@@ -218,7 +240,9 @@ class ScrollGradient extends Component {
         <div
           className={`${namespace}__after`}
           style={{
-            backgroundImage: `linear-gradient(${gradientRotation}deg, ${color} 10%, rgba(0,0,0,0))`,
+            backgroundImage: `linear-gradient(to ${
+              isDirectionX ? 'right' : 'bottom'
+            }, ${linearGradient})`,
           }}
           role="presentation"
           aria-hidden
