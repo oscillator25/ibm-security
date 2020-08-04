@@ -1,13 +1,16 @@
 /**
  * @file Navigation stories.
- * @copyright IBM Security 2019
+ * @copyright IBM Security 2019 - 2020
  */
 
-import React from 'react';
 import { storiesOf } from '@storybook/react';
+import NextLink from 'next/link';
+import React from 'react';
 
 import { components } from '../../../.storybook';
 import { Nav, NavItem, NavList } from '../..';
+
+console.log(NextLink);
 
 storiesOf(components('Nav'), module).add(
   'default',
@@ -15,7 +18,12 @@ storiesOf(components('Nav'), module).add(
     <div style={{ width: '300px' }}>
       <Nav heading="Nav example" label="Nav">
         <NavList title="Nav list 1">
-          <NavItem key="navitem_1-1" element="span" customprop="uniqueValue">
+          <NavItem
+            key="navitem_1-1"
+            element="span"
+            href="/href"
+            customprop="uniqueValue"
+          >
             Nav item 1-1 (with a custom element)
           </NavItem>
           <NavItem key="navitem_1-2" href="#navitem_1-2">
