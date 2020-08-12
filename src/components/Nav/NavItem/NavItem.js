@@ -105,21 +105,12 @@ export default class NavItem extends Component {
       ...other
     } = this.props;
 
-    const isAbsoluteLink = new RegExp('^([a-z]+://|//)', 'i');
-    const externalLink =
-      isAbsoluteLink.test(href) && href.indexOf(window.location.host) === -1;
-
     const classNames = classnames(namespace, className, {
       [`${namespace}--active`]:
         (this.state.current !== null && this.state.current === id) ||
-        (activeHref !== undefined && activeHref === href && !externalLink),
+        (activeHref !== undefined && activeHref === href),
       [`${namespace}--disabled`]: disabled,
     });
-
-    const externalLinkProps = externalLink && {
-      rel: 'noopener noreferrer',
-      target: '_blank',
-    };
 
     const handleDisabled = action => (!disabled ? action : null);
 
@@ -137,14 +128,10 @@ export default class NavItem extends Component {
         {link ? (
           <NavItemLink
             id={id}
-            className={classnames(linkClassName, {
-              [`${namespace}__link--external`]: externalLink,
-            })}
+            className={linkClassName}
             element={element}
-            external={externalLink}
             href={href}
             {...other}
-            {...externalLinkProps}
           >
             {children}
           </NavItemLink>

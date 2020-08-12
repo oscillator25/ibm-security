@@ -9685,15 +9685,20 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   outline-offset: -2px;
 }
 
-.security--nav__list__item__link--external .security--nav__list__item__link--external__icon {
-  margin-left: 0.25rem;
-  align-self: center;
-  fill: var(--text-01, #f4f4f4);
-  opacity: 0;
-  flex-shrink: 0;
+.security--nav__list__item__link__container {
+  position: relative;
 }
 
-.security--nav__list__item__link--external:hover > .security--nav__list__item__link--external__icon, .security--nav__list__item__link--external:focus > .security--nav__list__item__link--external__icon {
+.security--nav__list__item__link--external + .security--nav__list__item__link--external__icon {
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate3d(100%, -50%, 0);
+}
+
+.security--nav__list__item__link--external:hover + .security--nav__list__item__link--external__icon, .security--nav__list__item__link--external:focus + .security--nav__list__item__link--external__icon {
   opacity: 1;
 }
 

@@ -141,7 +141,6 @@ exports[`Nav Rendering renders correctly 1`] = `
                 <NavItemLink
                   className="security--nav__list__item__link"
                   element="a"
-                  external={false}
                   href="#0"
                   id="security--nav__list__item"
                 >
@@ -280,7 +279,6 @@ exports[`Nav Rendering renders correctly 1`] = `
                 <NavItemLink
                   className="security--nav__list__item__link"
                   element="a"
-                  external={false}
                   href="#1"
                   id="security--nav__list__item"
                 >
@@ -324,7 +322,6 @@ exports[`Nav Rendering renders correctly 1`] = `
           <NavItemLink
             className="security--nav__list__item__link"
             element="a"
-            external={false}
             href="#2"
             id="security--nav__list__item"
           >

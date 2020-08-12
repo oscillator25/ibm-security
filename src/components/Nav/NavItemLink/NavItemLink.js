@@ -5,7 +5,7 @@
 
 import { Launch16 } from '@carbon/icons-react';
 import classnames from 'classnames';
-import { bool, elementType, node, string } from 'prop-types';
+import { elementType, node, string } from 'prop-types';
 import React, { cloneElement, createElement, forwardRef } from 'react';
 
 import { getComponentNamespace } from '../../../globals/namespace';
@@ -15,19 +15,32 @@ import Icon from '../../Icon';
 const namespace = getComponentNamespace('nav__list__item__link');
 
 const NavItemLink = forwardRef((props, ref) => {
-  const { children, className, element, external, id, ...other } = props;
+  const { children, className, element, href, id, ...other } = props;
+
+  const isExternalLink = /^https?:\/\//.test(href);
+
+  const childProps = {
+    className: classnames(className, {
+      [`${namespace}--external`]: isExternalLink,
+    }),
+    id,
+    ...(isExternalLink && {
+      rel: 'noopener noreferrer',
+      target: '_blank',
+    }),
+  };
 
   const { type } = children;
-  const elementProps = !type ? { className, id } : {};
+  const parentProps = { ...(!type && childProps) };
 
   const content = (
     <>
       {createElement(
         element,
-        { ref, ...elementProps, ...other },
-        type ? cloneElement(children, { className }) : children
+        { href, ref, ...parentProps, ...other },
+        type ? cloneElement(children, childProps) : children
       )}
-      {external && (
+      {isExternalLink && (
         <Icon
           className={`${namespace}--external__icon`}
           renderIcon={Launch16}
@@ -36,8 +49,10 @@ const NavItemLink = forwardRef((props, ref) => {
     </>
   );
 
-  return external ? (
-    <div className={classnames({ [`${namespace}__container`]: external })}>
+  return isExternalLink ? (
+    <div
+      className={classnames({ [`${namespace}__container`]: isExternalLink })}
+    >
       {content}
     </div>
   ) : (
@@ -57,8 +72,8 @@ NavItemLink.propTypes = {
   /** Specify the ID of the `NavItemLink` */
   id: string,
 
-  /** Specify whether the link is external or not */
-  external: bool,
+  /** Specify the URL of the link */
+  href: string,
 
   /** Provide an optional class to be applied to the containing node */
   className: string,
@@ -68,7 +83,7 @@ NavItemLink.defaultProps = {
   children: null,
   element: 'a',
   id: null,
-  external: false,
+  href: null,
   className: null,
 };
 
