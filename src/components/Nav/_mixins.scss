@@ -203,6 +203,10 @@
         &:focus {
           @include focus-outline('outline');
         }
+
+        &__container {
+          position: relative;
+        }
       }
 
       &__link--external {
@@ -210,17 +214,18 @@
         /// @type String
         $nav__item__link--external__icon: '#{&}__icon';
 
-        #{$nav__item__link--external__icon} {
-          margin-left: $carbon--spacing-02;
-          align-self: center;
-          fill: $text-01;
+        + #{$nav__item__link--external__icon} {
+          position: absolute;
+          top: 50%;
+          right: $nav__link__spacing__padding;
           opacity: 0;
-          flex-shrink: 0;
+          pointer-events: none;
+          transform: translate3d(100%, -50%, 0);
         }
 
         &:hover,
         &:focus {
-          > #{$nav__item__link--external__icon} {
+          + #{$nav__item__link--external__icon} {
             opacity: 1;
           }
         }

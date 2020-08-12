@@ -3,16 +3,13 @@
  * @copyright IBM Security 2019 - 2020
  */
 
-import Launch16 from '@carbon/icons-react/lib/launch/16';
-
 import classnames from 'classnames';
 import { bool, elementType, func, node, number, string } from 'prop-types';
 import React, { Component } from 'react';
-import NavItemLink from '../NavItemLink';
-
-import Icon from '../../Icon';
 
 import { getComponentNamespace } from '../../../globals/namespace';
+
+import NavItemLink from '../NavItemLink';
 
 export const namespace = getComponentNamespace('nav__list__item');
 
@@ -144,17 +141,12 @@ export default class NavItem extends Component {
               [`${namespace}__link--external`]: externalLink,
             })}
             element={element}
+            external={externalLink}
             href={href}
             {...other}
             {...externalLinkProps}
           >
             {children}
-            {externalLink && (
-              <Icon
-                className={`${namespace}__link--external__icon`}
-                renderIcon={Launch16}
-              />
-            )}
           </NavItemLink>
         ) : (
           <div

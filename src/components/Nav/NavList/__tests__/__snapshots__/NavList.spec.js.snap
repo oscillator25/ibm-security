@@ -122,6 +122,7 @@ exports[`Nav Rendering renders correctly 1`] = `
           <NavItemLink
             className="security--nav__list__item__link"
             element="a"
+            external={false}
             href="#"
             id="security--nav__list__item"
           >

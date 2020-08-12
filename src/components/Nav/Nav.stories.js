@@ -4,13 +4,13 @@
  */
 
 import { storiesOf } from '@storybook/react';
+
+// https://nextjs.org/docs/api-reference/next/link
 import NextLink from 'next/link';
 import React from 'react';
 
 import { components } from '../../../.storybook';
 import { Nav, NavItem, NavList } from '../..';
-
-console.log(NextLink);
 
 storiesOf(components('Nav'), module).add(
   'default',
@@ -18,16 +18,16 @@ storiesOf(components('Nav'), module).add(
     <div style={{ width: '300px' }}>
       <Nav heading="Nav example" label="Nav">
         <NavList title="Nav list 1">
-          <NavItem
-            key="navitem_1-1"
-            element="span"
-            href="/href"
-            customprop="uniqueValue"
-          >
+          <NavItem key="navitem_1-1" element="span">
             Nav item 1-1 (with a custom element)
           </NavItem>
-          <NavItem key="navitem_1-2" href="#navitem_1-2">
-            Nav item 1-2
+          <NavItem
+            key="navitem_1-2"
+            element={NextLink}
+            href={{ pathname: '/navitem', query: { name: '1-2' } }}
+            passHref
+          >
+            <a href="https://www.ibm.com">Nav item 1-2 (with a custom link)</a>
           </NavItem>
         </NavList>
         <NavList title="Nav list 2 expanded on page load" isExpandedOnPageload>
