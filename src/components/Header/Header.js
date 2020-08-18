@@ -1,11 +1,9 @@
 /**
  * @file Header.
- * @copyright IBM Security 2019
+ * @copyright IBM Security 2019 - 2020
  */
 
-import Close20 from '@carbon/icons-react/lib/close/20';
-import Notification20 from '@carbon/icons-react/lib/notification/20';
-import Settings20 from '@carbon/icons-react/lib/settings/20';
+import { Close20, Notification20, Settings20 } from '@carbon/icons-react';
 
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
@@ -13,16 +11,7 @@ import React, { Component, Fragment } from 'react';
 
 import theme from '../../globals/theme';
 
-import { defaultProps, namespace, propTypes } from './constants';
-
 import toggle from '../Component';
-
-import HeaderListItem from './HeaderListItem';
-import { namespace as headerListItemNamespace } from './HeaderListItem/constants';
-
-import HeaderNotification from './HeaderNotification';
-import HeaderPopoverHeader from './HeaderPopoverHeader';
-import HeaderPopoverLinkSecondary from './HeaderPopoverLinkSecondary';
 
 import { Accordion, AccordionItem } from '../Accordion';
 import Button from '../Button';
@@ -34,6 +23,15 @@ import Link from '../Link';
 import ScrollGradient from '../ScrollGradient/ScrollGradient';
 import ProfileImage from '../ProfileImage';
 import Transition from '../Transition';
+
+import { defaultProps, namespace, propTypes } from './constants';
+
+import HeaderListItem from './HeaderListItem';
+import { namespace as headerListItemNamespace } from './HeaderListItem/constants';
+
+import HeaderNotification from './HeaderNotification';
+import HeaderPopoverHeader from './HeaderPopoverHeader';
+import HeaderPopoverLinkSecondary from './HeaderPopoverLinkSecondary';
 
 const headerButtonNamespace = `${namespace}__button`;
 
@@ -154,18 +152,14 @@ export default class Header extends Component {
   /**
    * Closes the popover when loses focus.
    */
-  closePopover(target) {
-    setTimeout(() => {
-      const activeElement =
-        target.getRootNode().activeElement || document.activeElement;
-      const value = target.getAttribute('value');
-      const label = activeElement
-        ? activeElement.getAttribute('aria-label') || ''
-        : '';
-      if (!target.contains(activeElement) && label.indexOf(value) === -1) {
-        this.toggle(value);
-      }
-    }, 0);
+  closePopover({ relatedTarget }, target, ref) {
+    console.log('relatedTarget', relatedTarget);
+    console.log('target', target);
+    console.log('ref', ref);
+
+    if (!target.contains(relatedTarget) && relatedTarget !== ref) {
+      this.toggle(target.getAttribute('value'));
+    }
   }
 
   /**
@@ -176,13 +170,13 @@ export default class Header extends Component {
     const { labels, links, profile, onAccountClick } = this.props;
     const { accountList, isActive } = this.state;
 
+    const hasAccount = profile.account;
+
     if (isActive.profile) {
       setTimeout(() => {
         this.userProfile.focus();
       }, 0);
     }
-
-    const hasAccount = profile.account;
 
     const accountElement = hasAccount && (
       <Fragment>
@@ -205,11 +199,13 @@ export default class Header extends Component {
         ref={userProfile => {
           this.userProfile = userProfile;
         }}
-        value="profile"
-        tabIndex="0"
-        role="tabpanel"
-        onBlur={() => this.closePopover(this.userProfile)}
         className={`${namespace}__popover--focus`}
+        onBlur={event =>
+          this.closePopover(event, this.userProfile, this.toggleProfile)
+        }
+        role="tabpanel"
+        tabIndex="0"
+        value="profile"
       >
         <HeaderPopoverHeader
           className={`${namespace}__popover__profile__header`}
@@ -301,20 +297,25 @@ export default class Header extends Component {
     const { labels, links, notifications, totalNotifications } = this.props;
     const { isActive } = this.state;
     const { length } = notifications;
-    if (isActive.notifications)
+
+    if (isActive.notifications) {
       setTimeout(() => {
         this.notifications.focus();
       }, 0);
+    }
+
     return renderPopover(
       <div
         ref={notifications => {
           this.notifications = notifications;
         }}
+        className={`${namespace}__popover--focus`}
+        onBlur={event =>
+          this.closePopover(event, this.notifications, this.toggleNotifications)
+        }
         role="tabpanel"
         tabIndex="0"
         value="notifications"
-        onBlur={() => this.closePopover(this.notifications)}
-        className={`${namespace}__popover--focus`}
       >
         <HeaderPopoverHeader title={labels.notifications.title} />
         {length > 0 && (
@@ -431,19 +432,21 @@ export default class Header extends Component {
             hasPopup={isUserActive}
             isExpanded={isActive.notifications}
           >
-            <Fragment>
+            <>
               <IconButton
-                aria-label={labels.notifications.button}
+                ref={toggleNotifications => {
+                  this.toggleNotifications = toggleNotifications;
+                }}
                 className={notificationsButtonClasses}
+                aria-label={labels.notifications.button}
                 onClick={() => this.toggle('notifications')}
                 renderIcon={Notification20}
                 state={notifications}
                 tooltip={false}
-              >
-                <Icon name="notification" />
-              </IconButton>
+              />
+
               {this.renderNotifications()}
-            </Fragment>
+            </>
           </HeaderListItem>
         )}
 
@@ -452,17 +455,20 @@ export default class Header extends Component {
           hasPopup={isUserActive}
           isExpanded={isActive.profile}
         >
-          <Fragment>
+          <>
             <button
-              aria-label={labels.profile.button}
+              ref={toggleProfile => {
+                this.toggleProfile = toggleProfile;
+              }}
               className={profileButtonClasses}
+              aria-label={labels.profile.button}
               onClick={() => this.toggle('profile')}
             >
               <ProfileImage profile={profile} />
             </button>
 
             {this.renderProfile()}
-          </Fragment>
+          </>
         </HeaderListItem>
       </Fragment>
     ) : (
