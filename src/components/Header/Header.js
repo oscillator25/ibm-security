@@ -47,6 +47,13 @@ const renderPopover = (children, state) => (
   </Transition>
 );
 
+const popoverProps = ({ ...props }) => ({
+  className: `${namespace}__popover--focus`,
+  onMouseDown: event => event.preventDefault(),
+  role: 'tabpanel',
+  ...props,
+});
+
 /**
  * Header class.
  * @className
@@ -75,6 +82,13 @@ export default class Header extends Component {
       </Fragment>
     ),
   };
+
+  constructor(props) {
+    super(props);
+
+    this.onNotificationsBlur = this.onNotificationsBlur.bind(this);
+    this.onProfileBlur = this.onProfileBlur.bind(this);
+  }
 
   state = {
     isActive: { notifications: false, profile: false },
@@ -124,7 +138,18 @@ export default class Header extends Component {
     return [];
   }
 
-  toggle = toggle.bind(this);
+  onNotificationsBlur(event) {
+    this.closePopover(
+      event,
+      this.notifications,
+      this.toggleNotifications,
+      'notifications'
+    );
+  }
+
+  onProfileBlur(event) {
+    this.closePopover(event, this.userProfile, this.toggleProfile, 'profile');
+  }
 
   /**
    * Clears a notification.
@@ -152,15 +177,16 @@ export default class Header extends Component {
   /**
    * Closes the popover when loses focus.
    */
-  closePopover({ relatedTarget }, target, ref) {
-    console.log('relatedTarget', relatedTarget);
-    console.log('target', target);
-    console.log('ref', ref);
-
-    if (!target.contains(relatedTarget) && relatedTarget !== ref) {
-      this.toggle(target.getAttribute('value'));
-    }
+  closePopover({ relatedTarget }, popover, button, value) {
+    return (
+      this.state.isActive[value] &&
+      !popover.contains(relatedTarget) &&
+      relatedTarget !== button &&
+      this.toggle(value)
+    );
   }
+
+  toggle = toggle.bind(this);
 
   /**
    * Renders the profile.
@@ -171,12 +197,6 @@ export default class Header extends Component {
     const { accountList, isActive } = this.state;
 
     const hasAccount = profile.account;
-
-    if (isActive.profile) {
-      setTimeout(() => {
-        this.userProfile.focus();
-      }, 0);
-    }
 
     const accountElement = hasAccount && (
       <Fragment>
@@ -196,15 +216,11 @@ export default class Header extends Component {
 
     return renderPopover(
       <div
+        {...popoverProps()}
         ref={userProfile => {
           this.userProfile = userProfile;
         }}
-        className={`${namespace}__popover--focus`}
-        onBlur={event =>
-          this.closePopover(event, this.userProfile, this.toggleProfile)
-        }
-        role="tabpanel"
-        tabIndex="0"
+        onBlur={this.onProfileBlur}
         value="profile"
       >
         <HeaderPopoverHeader
@@ -298,23 +314,13 @@ export default class Header extends Component {
     const { isActive } = this.state;
     const { length } = notifications;
 
-    if (isActive.notifications) {
-      setTimeout(() => {
-        this.notifications.focus();
-      }, 0);
-    }
-
     return renderPopover(
       <div
+        {...popoverProps()}
         ref={notifications => {
           this.notifications = notifications;
         }}
-        className={`${namespace}__popover--focus`}
-        onBlur={event =>
-          this.closePopover(event, this.notifications, this.toggleNotifications)
-        }
-        role="tabpanel"
-        tabIndex="0"
+        onBlur={this.onNotificationsBlur}
         value="notifications"
       >
         <HeaderPopoverHeader title={labels.notifications.title} />
@@ -439,6 +445,7 @@ export default class Header extends Component {
                 }}
                 className={notificationsButtonClasses}
                 aria-label={labels.notifications.button}
+                onBlur={this.onNotificationsBlur}
                 onClick={() => this.toggle('notifications')}
                 renderIcon={Notification20}
                 state={notifications}
@@ -462,6 +469,7 @@ export default class Header extends Component {
               }}
               className={profileButtonClasses}
               aria-label={labels.profile.button}
+              onBlur={this.onProfileBlur}
               onClick={() => this.toggle('profile')}
             >
               <ProfileImage profile={profile} />
