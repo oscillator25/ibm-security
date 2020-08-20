@@ -89,7 +89,7 @@
   }
 
   @each $token, $value in $theme {
-    --#{$token}: #{$value};
+    #{security--css-custom-property-declaration-get($token: $token)}: #{$value};
   }
 }
 

@@ -9,6 +9,10 @@
 
 @import '../color/index';
 
+/// The prefix used to namespace CSS custom properties.
+/// @type String
+$security--css-custom-property-prefix: '' !default;
+
 // Theme ignore list.
 /// @type List<String>
 /// @access private
@@ -63,6 +67,14 @@ $security--cool-gray--hover__overrides: (
     skeleton-01: $security--cool-gray-90--hover,
   ),
 );
+
+/// Gets the CSS custom property declaration to generate.
+/// @param {string} $token The token string to append.
+/// @returns {string} The generated CSS custom property declaration.
+/// @access private
+@function security--css-custom-property-declaration-get($token) {
+  @return --#{$security--css-custom-property-prefix}#{$token};
+}
 
 /// Alias for merging themes and tokens.
 /// @param {Map<string, Color>} $theme The theme map to merge.

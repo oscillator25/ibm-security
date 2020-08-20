@@ -26,7 +26,13 @@
                 $value: $token,
               ),
             $if_true: $value,
-            $if_false: var(--#{$token}, $value),
+            $if_false:
+              var(
+                #{security--css-custom-property-declaration-get(
+                    $token: $token,
+                  )},
+                $value
+              ),
           ),
       ),
     );
