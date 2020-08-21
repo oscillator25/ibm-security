@@ -4349,7 +4349,6 @@ Map {
     },
   },
   "IconButton" => Object {
-    "$$typeof": Symbol(react.forward_ref),
     "TooltipDirection": Object {
       "BOTTOM": "bottom",
       "LEFT": "left",
@@ -4369,7 +4368,6 @@ Map {
       "tooltip": true,
       "tooltipDirection": "bottom",
     },
-    "displayName": "IconButton",
     "propTypes": Object {
       "className": Object {
         "type": "string",
@@ -4443,7 +4441,6 @@ Map {
         "type": "oneOf",
       },
     },
-    "render": [Function],
   },
   "IconButtonBar" => Object {
     "defaultProps": Object {

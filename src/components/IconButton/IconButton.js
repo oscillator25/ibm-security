@@ -19,10 +19,10 @@ import Icon, {
 const defaultTooltipDirection = 'bottom';
 const tooltipDirections = ['top', 'right', defaultTooltipDirection, 'left'];
 
-export const namespace = getComponentNamespace('button--icon');
+const namespace = getComponentNamespace('button--icon');
 
 /** @enum Allowed tooltip directions. */
-export const TooltipDirection = tooltipDirections.reduce(
+const TooltipDirection = tooltipDirections.reduce(
   (accumulator, tooltipDirection) => {
     accumulator[tooltipDirection.toUpperCase()] = tooltipDirection;
 
@@ -34,51 +34,41 @@ export const TooltipDirection = tooltipDirections.reduce(
 /**
  * Icon button component.
  */
-const IconButton = forwardRef(
-  (
-    {
-      className,
-      iconClassName,
-      iconSize,
-      label,
-      onClick,
-      path,
-      renderIcon,
-      size,
-      state,
-      tooltip,
-      tooltipDirection,
-      ...other
-    },
-    ref
-  ) => {
-    const hasTooltip = label && tooltip;
+const IconButton = ({
+  className,
+  iconClassName,
+  iconSize,
+  label,
+  path,
+  renderIcon,
+  size,
+  state,
+  tooltip,
+  tooltipDirection,
+  ...other
+}) => {
+  const hasTooltip = label && tooltip;
 
-    return (
-      <button
-        ref={ref}
-        className={classnames(namespace, className, {
-          [`${namespace}--active`]: state,
-          [`${namespace}--${size}`]: size,
-          [`${namespace}--tooltip`]: hasTooltip,
-          [`${namespace}--tooltip--${tooltipDirection}`]: hasTooltip,
-        })}
-        aria-label={label}
-        onClick={onClick}
-        {...other}
-      >
-        <Icon
-          className={iconClassName}
-          path={path}
-          renderIcon={renderIcon}
-          size={iconSize}
-        />
-      </button>
-    );
-  }
-);
-
-IconButton.displayName = 'IconButton';
+  return (
+    <button
+      className={classnames(namespace, className, {
+        [`${namespace}--active`]: state,
+        [`${namespace}--${size}`]: size,
+        [`${namespace}--tooltip`]: hasTooltip,
+        [`${namespace}--tooltip--${tooltipDirection}`]: hasTooltip,
+      })}
+      aria-label={label}
+      {...other}
+    >
+      <Icon
+        className={iconClassName}
+        path={path}
+        renderIcon={renderIcon}
+        size={iconSize}
+      />
+    </button>
+  );
+};
 
 IconButton.defaultProps = {
   className: null,
@@ -131,4 +121,12 @@ IconButton.propTypes = {
 
 IconButton.TooltipDirection = TooltipDirection;
 
+const UNSTABLE__IconButton = forwardRef((props, ref) =>
+  IconButton({ ...props, ref })
+);
+
+UNSTABLE__IconButton.displayName = IconButton.displayName;
+
 export default IconButton;
+
+export { namespace, TooltipDirection, UNSTABLE__IconButton };

@@ -16,8 +16,10 @@ import toggle from '../Component';
 import { Accordion, AccordionItem } from '../Accordion';
 import Button from '../Button';
 import Icon from '../Icon';
-import IconButton from '../IconButton';
-import { namespace as iconButtonNamespace } from '../IconButton/IconButton';
+import {
+  namespace as iconButtonNamespace,
+  UNSTABLE__IconButton,
+} from '../IconButton/IconButton';
 
 import Link from '../Link';
 import ScrollGradient from '../ScrollGradient/ScrollGradient';
@@ -439,7 +441,7 @@ export default class Header extends Component {
             isExpanded={isActive.notifications}
           >
             <>
-              <IconButton
+              <UNSTABLE__IconButton
                 ref={toggleNotifications => {
                   this.toggleNotifications = toggleNotifications;
                 }}
