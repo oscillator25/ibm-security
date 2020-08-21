@@ -39,6 +39,7 @@ const IconButton = ({
   iconClassName,
   iconSize,
   label,
+  onClick,
   path,
   renderIcon,
   size,
@@ -58,6 +59,7 @@ const IconButton = ({
         [`${namespace}--tooltip--${tooltipDirection}`]: hasTooltip,
       })}
       aria-label={label}
+      onClick={onClick}
       {...other}
     >
       <Icon
