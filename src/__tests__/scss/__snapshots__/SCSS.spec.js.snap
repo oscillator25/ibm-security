@@ -9685,10 +9685,6 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   outline-offset: -2px;
 }
 
-.security--nav__list__item__link__container {
-  position: relative;
-}
-
 .security--nav__list__item__link--external + .security--nav__list__item__link--external__icon {
   position: absolute;
   top: 50%;

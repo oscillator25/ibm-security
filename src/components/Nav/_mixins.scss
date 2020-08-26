@@ -203,10 +203,6 @@
         &:focus {
           @include focus-outline('outline');
         }
-
-        &__container {
-          position: relative;
-        }
       }
 
       &__link--external {
