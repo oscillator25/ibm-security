@@ -5793,7 +5793,17 @@ Map {
         "type": "func",
       },
       "href": Object {
-        "type": "string",
+        "args": Array [
+          Array [
+            Object {
+              "type": "object",
+            },
+            Object {
+              "type": "string",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
       "id": Object {
         "type": "string",

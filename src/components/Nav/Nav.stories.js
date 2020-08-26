@@ -51,9 +51,7 @@ storiesOf(components('Nav'), module).add(
   ),
   {
     info: {
-      text: `
-          Basic implementation of a Nav component.
-        `,
+      text: 'Basic implementation of a Nav component',
     },
   }
 );

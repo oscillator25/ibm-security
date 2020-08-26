@@ -3,60 +3,22 @@
  * @copyright IBM Security 2019 - 2020
  */
 
-import { Launch16 } from '@carbon/icons-react';
-import classnames from 'classnames';
-import { elementType, node, string } from 'prop-types';
-import React, { cloneElement, createElement, forwardRef } from 'react';
-
-import { getComponentNamespace } from '../../../globals/namespace';
-
-import Icon from '../../Icon';
-
-const namespace = getComponentNamespace('nav__list__item__link');
+import { elementType, node, object, oneOfType, string } from 'prop-types';
+import { cloneElement, createElement, forwardRef } from 'react';
 
 const NavItemLink = forwardRef((props, ref) => {
   const { children, className, element, href, id, ...other } = props;
-
-  const isExternalLink = /^https?:\/\//.test(href);
+  const isChildLink = children.type === 'a';
 
   const childProps = {
-    className: classnames(className, {
-      [`${namespace}--external`]: isExternalLink,
-    }),
+    className,
     id,
-    ...(isExternalLink && {
-      rel: 'noopener noreferrer',
-      target: '_blank',
-    }),
   };
 
-  const { type } = children;
-  const parentProps = { ...(!type && childProps) };
-
-  const content = (
-    <>
-      {createElement(
-        element,
-        { href, ref, ...parentProps, ...other },
-        type ? cloneElement(children, childProps) : children
-      )}
-      {isExternalLink && (
-        <Icon
-          className={`${namespace}--external__icon`}
-          renderIcon={Launch16}
-        />
-      )}
-    </>
-  );
-
-  return isExternalLink ? (
-    <div
-      className={classnames({ [`${namespace}__container`]: isExternalLink })}
-    >
-      {content}
-    </div>
-  ) : (
-    content
+  return createElement(
+    element,
+    { href, ref, ...(!isChildLink && childProps), ...other },
+    isChildLink ? cloneElement(children, childProps) : children
   );
 });
 
@@ -73,7 +35,7 @@ NavItemLink.propTypes = {
   id: string,
 
   /** Specify the URL of the link */
-  href: string,
+  href: oneOfType([object, string]),
 
   /** Provide an optional class to be applied to the containing node */
   className: string,

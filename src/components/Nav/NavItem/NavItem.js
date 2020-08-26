@@ -3,12 +3,23 @@
  * @copyright IBM Security 2019 - 2020
  */
 
+import { Launch16 } from '@carbon/icons-react';
 import classnames from 'classnames';
-import { bool, elementType, func, node, number, string } from 'prop-types';
+import {
+  bool,
+  elementType,
+  func,
+  node,
+  number,
+  object,
+  oneOfType,
+  string,
+} from 'prop-types';
 import React, { Component } from 'react';
 
 import { getComponentNamespace } from '../../../globals/namespace';
 
+import Icon from '../../Icon';
 import NavItemLink from '../NavItemLink';
 
 export const namespace = getComponentNamespace('nav__list__item');
@@ -39,8 +50,8 @@ export default class NavItem extends Component {
     /** @type {Function} Click handler of an item. */
     handleItemSelect: func,
 
-    /** @type {string} The href of the nav item. */
-    href: string,
+    /** Specify the URL of the navigation item */
+    href: oneOfType([object, string]),
 
     /** @type {string} Identifier. */
     id: string,
@@ -104,11 +115,12 @@ export default class NavItem extends Component {
       id,
       ...other
     } = this.props;
+    const isExternalLink = /^https?:\/\//.test(href);
 
     const classNames = classnames(namespace, className, {
       [`${namespace}--active`]:
         (this.state.current !== null && this.state.current === id) ||
-        (activeHref !== undefined && activeHref === href),
+        (activeHref !== undefined && activeHref === href && !isExternalLink),
       [`${namespace}--disabled`]: disabled,
     });
 
@@ -126,15 +138,30 @@ export default class NavItem extends Component {
         tabIndex={handleDisabled(children ? -1 : tabIndex)}
       >
         {link ? (
-          <NavItemLink
-            id={id}
-            className={linkClassName}
-            element={element}
-            href={href}
-            {...other}
-          >
-            {children}
-          </NavItemLink>
+          <>
+            <NavItemLink
+              id={id}
+              className={classnames(linkClassName, {
+                [`${linkClassName}--external`]: isExternalLink,
+              })}
+              element={element}
+              href={href}
+              {...other}
+              {...(isExternalLink && {
+                rel: 'noopener noreferrer',
+                target: '_blank',
+              })}
+            >
+              {children}
+            </NavItemLink>
+
+            {isExternalLink && (
+              <Icon
+                className={`${linkClassName}--external__icon`}
+                renderIcon={Launch16}
+              />
+            )}
+          </>
         ) : (
           <div
             id={id}
