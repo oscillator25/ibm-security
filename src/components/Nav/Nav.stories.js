@@ -27,7 +27,7 @@ storiesOf(components('Nav'), module).add(
             href={{ pathname: '/navitem', query: { name: '1-2' } }}
             passHref
           >
-            <a href="https://www.ibm.com">Nav item 1-2 (with a custom link)</a>
+            <a href="#navitem_1-2">Nav item 1-2 (with a custom link)</a>
           </NavItem>
         </NavList>
         <NavList title="Nav list 2 expanded on page load" isExpandedOnPageload>
