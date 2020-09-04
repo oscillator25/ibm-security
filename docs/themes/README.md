@@ -73,3 +73,19 @@ import { theme } from '@carbon/ibm-security';
 // Specific token values.
 const { interactive01, interactive02 } = theme;
 ```
+
+### Customising CSS custom property prefix
+
+#### Sass
+
+You can use a custom prefix for the CSS custom property output by setting the following Sass variable before importing. For example:
+
+```scss
+$security--css-custom-property-prefix: 'css-custom-property-prefix';
+
+@import '@carbon/ibm-security/scss/components/ComponentName/index';
+```
+
+#### JavaScript
+
+You can use a custom prefix for the CSS custom property output by leveraging the [webpack `DefinePlugin`](https://webpack.js.org/plugins/define-plugin) to configure the `SECURITY_CSS_CUSTOM_PROPERTY_PREFIX` global constant.
