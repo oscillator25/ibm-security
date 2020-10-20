@@ -12,7 +12,11 @@ import LayoutModule from '../LayoutModule';
  * Description list modules provide a means to orderly layout terms and definitions.
  */
 const DescriptionListModule = ({ children, ...other }) => (
-  <LayoutModule namespace="description-list" {...other}>
+  <LayoutModule
+    name="DescriptionListModule"
+    namespace="description-list"
+    {...other}
+  >
     {children}
   </LayoutModule>
 );

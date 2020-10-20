@@ -19,11 +19,12 @@ const getLayoutModuleProps = ({ className, namespace }) => ({
   ),
 });
 
-const LayoutModule = ({ as, className, children, namespace, ...other }) =>
+const LayoutModule = ({ as, className, children, name, namespace, ...other }) =>
   createElement(
     as,
     {
       ...getLayoutModuleProps({ className, namespace }),
+      'data-security-layout-module': name,
       ...other,
     },
     children
@@ -39,12 +40,16 @@ LayoutModule.propTypes = {
   /** Provide a custom element to be rendered instead of the default */
   as: elementType,
 
+  /** Provide the name for the `LayoutModule` */
+  name: string,
+
   /** Provide an optional class to be applied to the containing node */
   className: string,
 };
 
 LayoutModule.defaultProps = {
   as: 'div',
+  name: null,
   className: null,
 };
 

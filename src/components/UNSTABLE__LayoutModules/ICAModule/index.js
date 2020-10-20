@@ -14,7 +14,7 @@ const namespace = 'ica';
  * The ICA module provides a means to orderly layout at-a-glance statistics.
  */
 const ICAModule = ({ children, hover, ...other }) => (
-  <LayoutModule namespace={namespace} {...other}>
+  <LayoutModule name="ICAModule" namespace={namespace} {...other}>
     {children({
       getLayoutProps: ({ className, ...rest } = {}) => ({
         className: classnames(className, {

@@ -4,8 +4,12 @@
 /// @copyright IBM Security 2019 - 2020
 ////
 
+@import '@carbon/colors/scss/colors';
+@import '@carbon/layout/scss/mini-unit';
 @import '@carbon/layout/scss/spacing';
+@import '@carbon/themes/scss/tokens';
 
+@import '../src/globals/border/index';
 @import '../src/globals/index';
 
 @import 'carbon-components/scss/globals/scss/vars';
@@ -35,5 +39,31 @@
     &--text-area__wrapper {
       width: 100%;
     }
+  }
+}
+
+.data-security-layout-module--debug {
+  /// Color.
+  /// @type Color
+  $layout-modules--debug__color: $carbon--magenta-50;
+
+  /// Size.
+  /// @type Length
+  $layout-modules--debug__sizing__box-shadow: carbon--mini-units(
+    $count: 2,
+  );
+
+  position: absolute;
+  box-shadow: inset 0 -#{$layout-modules--debug__sizing__box-shadow} #{$layout-modules--debug__sizing__box-shadow} -#{$layout-modules--debug__sizing__box-shadow}
+    $layout-modules--debug__color;
+  border: $border__sizing__width solid $layout-modules--debug__color;
+  pointer-events: none;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: $link-01;
+    content: attr(data-security-layout-module);
   }
 }

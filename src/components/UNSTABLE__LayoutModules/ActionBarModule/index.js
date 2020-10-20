@@ -14,7 +14,7 @@ const namespace = 'action-bar';
  * Action bars allow users to take multiple actions on the subsequent section.
  */
 const ActionBarModule = ({ children, ...other }) => (
-  <LayoutModule namespace={namespace} {...other}>
+  <LayoutModule name="ActionBarModule" namespace={namespace} {...other}>
     {children}
   </LayoutModule>
 );

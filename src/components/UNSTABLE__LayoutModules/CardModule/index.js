@@ -15,7 +15,7 @@ const namespace = 'card';
  * The card module provides a means to orderly present related content and information using summary, navigational, or widget cards as the basis.
  */
 const CardModule = ({ children, ...other }) => (
-  <LayoutModule namespace={namespace} {...other}>
+  <LayoutModule name="CardModule" namespace={namespace} {...other}>
     {children({
       getLayoutProps: ({ className, ...rest } = {}) => ({
         className: classnames(

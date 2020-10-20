@@ -15,7 +15,7 @@ import {
 import { layout03, layout04 } from '@carbon/layout';
 
 import { Grid, Row, Column } from 'carbon-components-react';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { disableCentered, patterns } from '../../../.storybook';
 import withBackground from '../../../.storybook/components/Background';
@@ -64,6 +64,7 @@ export default {
   parameters: {
     ...disableCentered(),
   },
+
   decorators: [
     story => (
       <>
@@ -72,6 +73,53 @@ export default {
         <Grid>{story()}</Grid>
       </>
     ),
+    story => {
+      const namespace = 'data-security-layout-module';
+      const px = value => `${value}px`;
+
+      const style = overlays =>
+        overlays.forEach(({ element, overlay }) => {
+          const { height, width, x, y } = element.getBoundingClientRect();
+
+          Object.assign(overlay.style, {
+            top: px(y),
+            left: px(x),
+            height: px(height),
+            width: px(width),
+          });
+        });
+
+      useEffect(() => {
+        const overlays = [...document.querySelectorAll(`[${namespace}]`)].map(
+          element => {
+            const overlay = document.createElement('span');
+
+            overlay.classList.add(`${namespace}--debug`);
+
+            overlay.setAttribute('aria-hidden', true);
+            overlay.setAttribute(namespace, element.getAttribute(namespace));
+
+            document.body.appendChild(overlay);
+
+            return { element, overlay };
+          }
+        );
+
+        const update = () => style(overlays);
+
+        update();
+
+        window.addEventListener('resize', update);
+
+        return () => {
+          window.removeEventListener('resize', update);
+
+          overlays.forEach(({ overlay }) => overlay.remove());
+        };
+      });
+
+      return story();
+    },
   ],
 };
 

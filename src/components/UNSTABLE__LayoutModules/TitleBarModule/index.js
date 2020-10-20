@@ -18,7 +18,7 @@ const namespace = 'title-bar';
  * Title bar modules provide interchangeable and reliable headings for establishing consistent hierarchies.
  */
 const TitleBarModule = ({ children, element, subsection, title, ...other }) => (
-  <LayoutModule namespace={namespace} {...other}>
+  <LayoutModule name="TitleBarModule" namespace={namespace} {...other}>
     {createElement(
       element,
       {
