@@ -37,13 +37,12 @@ export default class PanelContainer extends Component {
     super(props);
 
     if (isClient()) {
-      const { className, rootNode } = this.props;
-
-      this.rootNode = rootNode;
-      this.dom = rootNode.getRootNode();
-
       this.container = this.getContainer();
       this.containerClass = `${namespace}__container`;
+
+      const { className, rootNode } = this.props;
+
+      this.dom = rootNode.getRootNode();
 
       this.element = this.dom.createElement('section');
       this.element.classList.add(namespace);
@@ -60,16 +59,18 @@ export default class PanelContainer extends Component {
 
   componentDidMount() {
     if (isClient()) {
+      const { rootNode } = this.props;
+
       if (!this.container) {
         this.container = this.dom.createElement('div');
 
-        this.rootNode.appendChild(this.container);
+        rootNode.appendChild(this.container);
       }
 
       this.container.appendChild(this.element);
 
       if (this.container.childElementCount === 1) {
-        this.rootNode.classList.toggle(this.containerClass);
+        rootNode.classList.toggle(this.containerClass);
       }
 
       focusFirstElement(this.element);
@@ -81,11 +82,13 @@ export default class PanelContainer extends Component {
 
   componentWillUnmount() {
     if (isClient()) {
+      const { rootNode } = this.props;
+
       this.container.removeChild(this.element);
 
       if (this.container.childElementCount === 0) {
-        this.rootNode.classList.toggle(this.containerClass);
-        this.rootNode.removeChild(this.container);
+        rootNode.classList.toggle(this.containerClass);
+        rootNode.removeChild(this.container);
       }
 
       this.element.removeEventListener('keydown', this.handleKeyPress);
