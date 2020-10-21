@@ -1,19 +1,19 @@
 /**
  * @file Panel container.
- * @copyright IBM Security 2019
+ * @copyright IBM Security 2019 - 2020
  */
 
 /* eslint-disable no-useless-computed-key, react/require-default-props */
 
 import Close20 from '@carbon/icons-react/lib/close/20';
 
-import classnames from 'classnames';
-import PropTypes, { func } from 'prop-types';
-import React, { Component, createRef, Fragment } from 'react';
-import { createPortal } from 'react-dom';
-
 import requiredIfGivenPropIsTruthy from 'carbon-components-react/lib/prop-types/requiredIfGivenPropIsTruthy';
 import setupGetInstanceId from 'carbon-components-react/lib/tools/setupGetInstanceId';
+
+import classnames from 'classnames';
+import PropTypes, { func } from 'prop-types';
+import React, { Component, createRef } from 'react';
+import { createPortal } from 'react-dom';
 
 import { getComponentNamespace } from '../../globals/namespace';
 import * as defaultLabels from '../../globals/nls';
@@ -35,17 +35,20 @@ const getInstanceId = setupGetInstanceId();
 export default class PanelContainer extends Component {
   constructor(props) {
     super(props);
+
     if (isClient()) {
+      const { className, rootNode } = this.props;
+
+      this.rootNode = rootNode;
+      this.dom = rootNode.getRootNode();
+
       this.container = this.getContainer();
       this.containerClass = `${namespace}__container`;
-      this.element = document.createElement('section');
 
+      this.element = this.dom.createElement('section');
       this.element.classList.add(namespace);
 
-      this.previousFocus = document.activeElement;
-      this.rootNode = this.props.rootNode;
-
-      const { className } = this.props;
+      this.previousFocus = this.dom.activeElement;
 
       if (className) {
         this.element.classList.add(className);
@@ -58,11 +61,13 @@ export default class PanelContainer extends Component {
   componentDidMount() {
     if (isClient()) {
       if (!this.container) {
-        this.container = document.createElement('div');
+        this.container = this.dom.createElement('div');
+
         this.rootNode.appendChild(this.container);
       }
 
       this.container.appendChild(this.element);
+
       if (this.container.childElementCount === 1) {
         this.rootNode.classList.toggle(this.containerClass);
       }
@@ -222,7 +227,7 @@ export default class PanelContainer extends Component {
             {renderFooter ? (
               renderFooter()
             ) : (
-              <Fragment>
+              <>
                 {secondaryButton && (
                   <Button
                     id={secondaryButton.id}
@@ -246,7 +251,7 @@ export default class PanelContainer extends Component {
                 >
                   {PANEL_CONTAINER_PRIMARY_BUTTON}
                 </Button>
-              </Fragment>
+              </>
             )}
           </div>
         )}

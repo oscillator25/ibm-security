@@ -101,13 +101,10 @@ class Portal extends Component {
 
       rootNode.classList.toggle(this.containerClass);
 
-      const { ownerDocument } = rootNode;
+      const dom = rootNode.getRootNode();
 
-      if (
-        hasOverlay &&
-        ownerDocument.getElementsByClassName(namespace).length === 0
-      ) {
-        this.overlay = ownerDocument.createElement('div');
+      if (hasOverlay && dom.getElementsByClassName(namespace).length === 0) {
+        this.overlay = dom.createElement('div');
 
         this.overlay.setAttribute('tabIndex', '-1');
         this.overlay.classList.add(`${namespace}__overlay`);
