@@ -97,20 +97,24 @@ export const PORTAL_EVENTS = [
 class Portal extends Component {
   componentDidMount() {
     if (isClient()) {
-      const { rootNode, hasOverlay } = this.props;
+      const { hasOverlay, onOverlayClick, rootNode } = this.props;
 
       rootNode.classList.toggle(this.containerClass);
 
+      const { ownerDocument } = rootNode;
+
       if (
         hasOverlay &&
-        document.getElementsByClassName(namespace).length === 0
+        ownerDocument.getElementsByClassName(namespace).length === 0
       ) {
-        this.overlay = document.createElement('div');
+        this.overlay = ownerDocument.createElement('div');
+
         this.overlay.setAttribute('tabIndex', '-1');
         this.overlay.classList.add(`${namespace}__overlay`);
+
         rootNode.appendChild(this.overlay);
 
-        if (this.props.onOverlayClick) {
+        if (onOverlayClick) {
           this.overlay.addEventListener('mousedown', this.handleOverlayClick);
         }
       }
