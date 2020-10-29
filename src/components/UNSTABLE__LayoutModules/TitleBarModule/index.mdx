@@ -21,7 +21,7 @@ Title bar modules provide interchangeable and reliable headings for establishing
 [↳ References](#references)  
 [↳ Troubleshooting](#troubleshooting)
 
-### Overview
+## Overview
 
 Everything passed in as a child of the title bar module will be rendered.
 
@@ -32,7 +32,7 @@ Everything passed in as a child of the title bar module will be rendered.
   />
 </Canvas>
 
-### Variants
+## Variants
 
 If necessary, actions can be placed inline with the title.
 
@@ -42,7 +42,7 @@ The title bar can also accept two type variants, sub-section title and section t
 
 <Source id="patterns-unstable-layout-modules-titlebarmodule--variant" />
 
-### Component API
+## Component API
 
 <ArgsTable />
 
@@ -50,7 +50,7 @@ _**\***Required property_
 
 Additional props passed into `TitleBarModule` will be forwarded along to the underlying title bar module containers.
 
-#### `subsection`
+### `subsection`
 
 Use the `subsection` prop to specify whether a subsection should be used.
 
@@ -62,7 +62,7 @@ Use the `subsection` prop to specify whether a subsection should be used.
 <TitleBarModule title="Sub-section title" subsection />
 ```
 
-#### `element`
+### `element`
 
 This prop specifies a different element to be rendered as a title.
 
@@ -74,7 +74,7 @@ This prop specifies a different element to be rendered as a title.
 <TitleBarModule element="h3" title="Section 3 title" />
 ```
 
-### Grid placement
+## Grid placement
 
 Title bar modules can span between 4 and 8 columns, following the [narrow grid](#references) implementation.
 
@@ -94,7 +94,7 @@ Title bar modules can span between 4 and 8 columns, following the [narrow grid](
 </Column>
 ```
 
-### Anatomy
+## Anatomy
 
 1. **Title:** This the title itself, learn more about potential [variants](#variants) above.
 2. **Top spacer:** There is 16px spacer `$layout-01`, included at the top of the TitleBarModule.
@@ -102,14 +102,14 @@ Title bar modules can span between 4 and 8 columns, following the [narrow grid](
 
 <img alt="`TitleBarModule` anatomy" src={anatomy} />
 
-### Examples
+## Examples
 
 <Row>
   <Detail />
   <Overview />
 </Row>
 
-### References
+## References
 
 - <LinkTo kind="patterns-iconbuttonbar" story="default">
     IconButtonBar

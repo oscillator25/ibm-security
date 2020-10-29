@@ -7,6 +7,7 @@
 @import '@carbon/layout/scss/spacing';
 @import '@carbon/motion/scss/motion';
 @import '@carbon/themes/scss/tokens';
+@import '@carbon/type/scss/styles';
 
 @import 'carbon-components/scss/globals/scss/motion';
 
@@ -15,35 +16,47 @@
 .sbdocs {
   $root: &;
 
-  & &-h3,
-  & &-h4 {
-    &,
-    &:first-of-type {
-      margin-top: $carbon--layout-05;
-    }
-  }
-
-  & &-ul {
-    /// Spacing.
-    /// @type Length
-    $unordered-list__spacing: $carbon--spacing-05;
-
-    padding-left: $unordered-list__spacing;
-    list-style: none;
-
-    > #{$root}-li {
-      position: relative;
-
-      &::before {
-        position: absolute;
-        left: -#{$unordered-list__spacing};
-        content: '–';
+  #{$root} {
+    &-h2,
+    &-h3 {
+      &,
+      &:first-of-type {
+        margin-top: $carbon--layout-05;
       }
     }
-  }
 
-  & &-preview {
-    background-color: $body__color__background;
+    @each $level, $name in (1: '05', 2: '03', 3: '02') {
+      &-h#{$level} {
+        @include carbon--type-style($name: expressive-heading-#{$name});
+      }
+    }
+
+    &-h2 {
+      border-bottom-width: 0;
+    }
+
+    &-ul {
+      /// Spacing.
+      /// @type Length
+      $unordered-list__spacing: $carbon--spacing-05;
+
+      padding-left: $unordered-list__spacing;
+      list-style: none;
+
+      > #{$root}-li {
+        position: relative;
+
+        &::before {
+          position: absolute;
+          left: -#{$unordered-list__spacing};
+          content: '–';
+        }
+      }
+    }
+
+    &-preview {
+      background-color: $body__color__background;
+    }
   }
 
   [title='Required'] {

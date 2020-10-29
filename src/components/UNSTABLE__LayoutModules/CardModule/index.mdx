@@ -20,7 +20,7 @@ The card module provides a means to orderly present related content and informat
 [↳ References](#references)  
 [↳ Troubleshooting](#troubleshooting)
 
-### Overview
+## Overview
 
 The card module can be built using a combination of the `CardModule`, [grid](#references), and either the [`Card`](#references), [`SummaryCard`](#references), or [`Tile`](#references) components.
 
@@ -33,7 +33,7 @@ Everything passed in as a [render prop](#references) child of `CardModule` will 
   />
 </Canvas>
 
-### Variants
+## Variants
 
 The card module can contain a number of complimentary layout modules within the parent to create a section of related modules. The following options can be used for this purpose.
 The cards within the module can also be arranged in a number of different ways.
@@ -46,7 +46,7 @@ The cards within the module can also be arranged in a number of different ways.
 
 <Source id="patterns-unstable-layout-modules-cardmodule--variant" />
 
-### Component API
+## Component API
 
 <ArgsTable />
 
@@ -54,7 +54,7 @@ _**\***Required property_
 
 Additional props passed into `CardModule` will be forwarded along to the underlying card module container.
 
-#### Render props
+### Render props
 
 In order to make sure that everything works as intended, it's important to pass all of the props of the component as fields on the object given to the prop getter. For example, to add a `className`:
 
@@ -62,7 +62,7 @@ In order to make sure that everything works as intended, it's important to pass 
 <SummaryCard {...getLayoutProps({ className: 'className' })} />
 ```
 
-### Grid placement
+## Grid placement
 
 Card modules can span between 4 and 16 columns. Following the narrow grid implementation, the layout module container hangs 16 pixels in the left margin. The narrow grid position allows headings and copy outside of containers to align with the labels within the card module.
 
@@ -82,7 +82,7 @@ Card modules can span between 4 and 16 columns. Following the narrow grid implem
 </Column>
 ```
 
-### Anatomy
+## Anatomy
 
 1. **Cards:** Cards can use `Card`, `SummaryCard`, or `Tile` components.
 2. **Card spacer (optional):** If there are multiple rows of cards, use the 16-pixel spacer `$layout-01` to separate the rows.
@@ -90,13 +90,13 @@ Card modules can span between 4 and 16 columns. Following the narrow grid implem
 
 <img alt="`CardModule` anatomy" src={anatomy} />
 
-### Examples
+## Examples
 
 <Row>
   <Detail />
 </Row>
 
-### References
+## References
 
 - [Grid](https://react.carbondesignsystem.com/?path=/docs/grid--narrow)
 

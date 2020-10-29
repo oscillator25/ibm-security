@@ -23,7 +23,7 @@ Description modules provide a means to orderly layout short-form content.
 [↳ References](#references)  
 [↳ Troubleshooting](#troubleshooting)
 
-### Overview
+## Overview
 
 The description module can be built using a combination of the [`TitleBarModule`](#references) component and [paragraph elements](#references).
 
@@ -36,7 +36,7 @@ Everything passed in as a [render prop](#references) child of `DescriptionModule
   />
 </Canvas>
 
-### Variants
+## Variants
 
 If necessary, subsection titles can be substituted or used below section titles. There are values already supplied for the title type styles so you shouldn't supplement your own. Learn more by reviewing the <LinkTo kind="patterns-unstable-layout-modules-titlebarmodule" story="default" > TitleBarModule. </LinkTo>
 
@@ -46,7 +46,7 @@ The description module can also be created without any title.
 
 <Source id="patterns-unstable-layout-modules-descriptionmodule--variant" />
 
-### Component API
+## Component API
 
 <ArgsTable />
 
@@ -54,7 +54,7 @@ _**\***Required property_
 
 Additional props passed into `DescriptionModule` will be forwarded along to the underlying description module container.
 
-#### Render props
+### Render props
 
 In order to make sure that everything works as intended, it's important to pass all of the props of the component as fields on the object given to the prop getter. For example, to add a `className`:
 
@@ -62,7 +62,7 @@ In order to make sure that everything works as intended, it's important to pass 
 <p {...getLayoutProps({ className: 'className' })} />
 ```
 
-### Grid placement
+## Grid placement
 
 Description modules span across 8 columns, following the [narrow grid](#references) implementation.
 
@@ -82,7 +82,7 @@ Description modules span across 8 columns, following the [narrow grid](#referenc
 </Column>
 ```
 
-### Layout considerations
+## Layout considerations
 
 Occassionally a [spacing token](#references) will need to be included to offset the description module to ensure it top-aligns with the adjacent layout container. If a top spacing token is necessary, reference the layout module that sits directly above it as the starting point for placement.
 
@@ -91,7 +91,7 @@ Occassionally a [spacing token](#references) will need to be included to offset 
   src={layoutConsiderations}
 />
 
-### Anatomy
+## Anatomy
 
 1. **Title:** This is the title, achieved by using the TitleBarModule. <LinkTo kind="patterns-unstable-layout-modules-titlebarmodule" story="default" > Learn more </LinkTo> about the TitleBarModule and potential variants.
 2. **Description:** This is the description itself, the type style is defined so you shouldn't supplement your own values.
@@ -99,13 +99,13 @@ Occassionally a [spacing token](#references) will need to be included to offset 
 
 <img alt="`DescriptionModule` anatomy" src={anatomy} />
 
-### Examples
+## Examples
 
 <Row>
   <Detail />
 </Row>
 
-### References
+## References
 
 - <LinkTo
     kind="patterns-unstable-layout-modules-titlebarmodule"
