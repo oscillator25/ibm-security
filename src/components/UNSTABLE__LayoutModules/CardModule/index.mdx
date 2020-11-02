@@ -1,21 +1,21 @@
 import { parameters } from '../../../../.storybook/preview';
 
+import anatomy from './images/anatomy.png';
+
 import variants from './images/variants.png';
 
 import doImage from './images/do.png';
 import dont from './images/dont.png';
-
-import anatomy from './images/anatomy.png';
 
 # CardModule
 
 The card module provides a means to orderly present related content and information using summary, navigational, or widget cards as the basis.
 
 [↳ Overview](#overview)  
-[↳ Variants](#variants)  
 [↳ Component API](#component-api)  
-[↳ Grid placement](#grid-placement)  
 [↳ Anatomy](#anatomy)  
+[↳ Variants](#variants)  
+[↳ Grid placement](#grid-placement)  
 [↳ Examples](#examples)  
 [↳ References](#references)  
 [↳ Troubleshooting](#troubleshooting)
@@ -33,6 +33,30 @@ Everything passed in as a [render prop](#references) child of `CardModule` will 
   />
 </Canvas>
 
+## Component API
+
+<ArgsTable />
+
+_**\***Required property_
+
+Additional props passed into `CardModule` will be forwarded along to the underlying card module container.
+
+## Render props
+
+In order to make sure that everything works as intended, it's important to pass all of the props of the component as fields on the object given to the prop getter. For example, to add a `className`:
+
+```jsx
+<SummaryCard {...getLayoutProps({ className: 'className' })} />
+```
+
+## Anatomy
+
+1. **Cards:** Cards can use `Card`, `SummaryCard`, or `Tile` components.
+2. **Card spacer (optional):** If there are multiple rows of cards, use the 16-pixel spacer `$layout-01` to separate the rows.
+3. **Bottom spacer:** The 32-pixel spacer `$layout-03` below the last card row provides the starting point for the layout module positioned directly underneath it.
+
+<img alt="`CardModule` anatomy" src={anatomy} />
+
 ## Variants
 
 The card module can contain a number of complimentary layout modules within the parent to create a section of related modules. The following options can be used for this purpose.
@@ -45,22 +69,6 @@ The cards within the module can also be arranged in a number of different ways.
 <img alt="`CardModule` variants" src={variants} />
 
 <Source id="patterns-unstable-layout-modules-cardmodule--variant" />
-
-## Component API
-
-<ArgsTable />
-
-_**\***Required property_
-
-Additional props passed into `CardModule` will be forwarded along to the underlying card module container.
-
-### Render props
-
-In order to make sure that everything works as intended, it's important to pass all of the props of the component as fields on the object given to the prop getter. For example, to add a `className`:
-
-```jsx
-<SummaryCard {...getLayoutProps({ className: 'className' })} />
-```
 
 ## Grid placement
 
@@ -81,14 +89,6 @@ Card modules can span between 4 and 16 columns. Following the narrow grid implem
   <CardModule />
 </Column>
 ```
-
-## Anatomy
-
-1. **Cards:** Cards can use `Card`, `SummaryCard`, or `Tile` components.
-2. **Card spacer (optional):** If there are multiple rows of cards, use the 16-pixel spacer `$layout-01` to separate the rows.
-3. **Bottom spacer:** The 32-pixel spacer `$layout-03` below the last card row provides the starting point for the layout module positioned directly underneath it.
-
-<img alt="`CardModule` anatomy" src={anatomy} />
 
 ## Examples
 
