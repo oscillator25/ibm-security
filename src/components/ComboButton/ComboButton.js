@@ -7,7 +7,7 @@ import { ChevronDown16, ChevronUp16 } from '@carbon/icons-react';
 
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import React, { createElement, useState } from 'react';
+import React, { createElement, useRef, useState } from 'react';
 
 import { carbonPrefix, getComponentNamespace } from '../../globals/namespace';
 
@@ -28,6 +28,7 @@ const ComboButton = ({
   menuOffsetFlip,
   selectorPrimaryFocus,
 }) => {
+  const ref = useRef();
   const [isOpen, setIsOpen] = useState(false);
 
   const childrenArray = React.Children.toArray(children).filter(Boolean);
@@ -114,8 +115,10 @@ const ComboButton = ({
 
   return (
     <div
+      ref={ref}
       className={classnames(namespace, className)}
-      data-floating-menu-container
+
+      // data-floating-menu-container
     >
       <div className={`${namespace}__group`}>
         {primaryActionWithProps}
@@ -135,14 +138,19 @@ const ComboButton = ({
               `${namespace}__overflow-menu`
             )}
             direction={direction}
-            menuOffset={() => {
+            menuOffset={menuBody => {
               const { pageYOffset } = window;
+
+              menuBody.style.width = `${
+                ref.current.getBoundingClientRect().width
+              }px`;
 
               return {
                 top:
                   direction === TooltipDirection.TOP
                     ? pageYOffset
                     : pageYOffset * -1,
+
                 ...(typeof menuOffset === 'function'
                   ? menuOffset()
                   : menuOffset),

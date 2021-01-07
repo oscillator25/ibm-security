@@ -6,7 +6,6 @@ exports[`ComboButton renders a combo button with children and an overflow menu 1
 >
   <div
     class="security--combo-button"
-    data-floating-menu-container="true"
   >
     <div
       class="security--combo-button__group"
@@ -74,7 +73,6 @@ exports[`ComboButton renders a combo button without an overflow menu 1`] = `
 >
   <div
     class="security--combo-button"
-    data-floating-menu-container="true"
   >
     <div
       class="security--combo-button__group"
