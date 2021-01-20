@@ -48,6 +48,7 @@
     "@babel/runtime": "^7.4.3",
     "@carbon/colors": "10.17.0",
     "@carbon/grid": "10.17.0",
+    "@carbon/ibm-cloud-cognitive-security": "^0.3.0",
     "@carbon/icons-react": "10.22.0",
     "@carbon/import-once": "10.4.0",
     "@carbon/layout": "10.15.0",
