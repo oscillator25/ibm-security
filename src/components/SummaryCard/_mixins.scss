@@ -1,7 +1,7 @@
 ////
 /// Summary card mixins.
 /// @group summary-card
-/// @copyright IBM Security 2019 - 2020
+/// @copyright IBM Security 2019 - 2021
 ////
 
 @import '@carbon/layout/scss/mini-unit';
@@ -52,6 +52,8 @@
     $layer: overlay,
   );
 
+  $summary-card__spacing: $carbon--spacing-05;
+
   position: relative;
   display: flex;
   height: $header--height + $body--height + $footer--height;
@@ -69,22 +71,19 @@
   &__body {
     @include carbon--type-style($name: body-long-01);
 
-    // `hidden` because the ScrollGradient will handle overflow:
-    overflow: hidden;
-
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    height: 100%;
-    width: 100%;
-    padding: $carbon--spacing-05;
-    margin: 0;
+    height: $body--height;
+    padding-right: $summary-card__spacing;
+    padding-bottom: $summary-card__spacing;
+    padding-left: $summary-card__spacing;
   }
 
   &__header {
     height: $header--height;
     display: flex;
-    padding: $carbon--spacing-05 $carbon--spacing-05 0 $carbon--spacing-05;
+    padding-top: $summary-card__spacing;
+    padding-right: $summary-card__spacing;
+    padding-left: $summary-card__spacing;
+    margin-bottom: $summary-card__spacing;
 
     &__title {
       @include carbon--type-style($name: caption-01);
