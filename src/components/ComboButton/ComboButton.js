@@ -30,4 +30,14 @@ const ComboButton = ({
   );
 };
 
+const { defaultProps, propTypes } = CarbonComboButton;
+
+ComboButton.propTypes = {
+  ...propTypes,
+};
+
+ComboButton.defaultProps = {
+  ...defaultProps,
+};
+
 export default ComboButton;

@@ -27,6 +27,8 @@ const props = () => ({
   ),
 });
 
+console.log(ComboButton);
+
 storiesOf(patterns('ComboButton'), module).add(
   'default',
   () => (
