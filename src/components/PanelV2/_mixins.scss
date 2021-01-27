@@ -1,8 +1,7 @@
 ////
 /// Panel mixins.
 /// @group panel
-/// @copyright IBM Security 2019 - 2020
-////
+/// @copyright IBM Security 2019 - 2021
 
 @import '@carbon/layout/scss/mini-unit';
 @import '@carbon/layout/scss/spacing';
@@ -17,7 +16,6 @@
 @import '../../globals/rtl/index';
 @import '../../globals/theme/mixins';
 
-@import '../ComboButton/variables';
 @import '../Header/mixins';
 @import '../IconButton/mixins';
 @import '../Toolbar/mixins';
@@ -157,10 +155,6 @@
 
     &__button {
       flex-grow: 1;
-    }
-
-    #{get-component-namespace($component-name: $combo-button__name)} {
-      width: 100%;
     }
   }
 

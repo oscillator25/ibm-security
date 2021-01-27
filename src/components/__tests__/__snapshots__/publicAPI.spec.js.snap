@@ -1050,164 +1050,22 @@ Map {
       },
     },
   },
-  "ComboButton" => Object {
+  "ComboButton" => Object {},
+  "ComboButtonItem" => Object {
     "defaultProps": Object {
-      "className": "",
-      "direction": "top",
-      "menuOffset": [Function],
-      "menuOffsetFlip": undefined,
-      "selectorPrimaryFocus": "[data-overflow-menu-primary-focus]",
+      "disabled": null,
+      "href": null,
     },
     "propTypes": Object {
       "children": Object {
         "isRequired": true,
         "type": "node",
       },
-      "className": Object {
-        "type": "string",
-      },
-      "direction": Object {
-        "args": Array [
-          Array [
-            "top",
-            "bottom",
-          ],
-        ],
-        "type": "oneOf",
-      },
-      "menuOffset": Object {
-        "args": Array [
-          Array [
-            Object {
-              "args": Array [
-                Object {
-                  "left": Object {
-                    "args": Array [
-                      Array [
-                        Object {
-                          "type": "number",
-                        },
-                        Object {
-                          "type": "string",
-                        },
-                      ],
-                    ],
-                    "type": "oneOf",
-                  },
-                  "top": Object {
-                    "args": Array [
-                      Array [
-                        Object {
-                          "type": "number",
-                        },
-                        Object {
-                          "type": "string",
-                        },
-                      ],
-                    ],
-                    "type": "oneOf",
-                  },
-                },
-              ],
-              "type": "shape",
-            },
-            Object {
-              "type": "func",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
-      "menuOffsetFlip": Object {
-        "args": Array [
-          Array [
-            Object {
-              "args": Array [
-                Object {
-                  "left": Object {
-                    "args": Array [
-                      Array [
-                        Object {
-                          "type": "number",
-                        },
-                        Object {
-                          "type": "string",
-                        },
-                      ],
-                    ],
-                    "type": "oneOf",
-                  },
-                  "top": Object {
-                    "args": Array [
-                      Array [
-                        Object {
-                          "type": "number",
-                        },
-                        Object {
-                          "type": "string",
-                        },
-                      ],
-                    ],
-                    "type": "oneOf",
-                  },
-                },
-              ],
-              "type": "shape",
-            },
-            Object {
-              "type": "func",
-            },
-          ],
-        ],
-        "type": "oneOfType",
-      },
-      "selectorPrimaryFocus": Object {
-        "type": "string",
-      },
-    },
-  },
-  "ComboButtonItem" => Object {
-    "defaultProps": Object {
-      "className": "",
-      "disabled": false,
-      "href": undefined,
-      "iconDescription": "",
-      "onClick": [Function],
-      "renderIcon": null,
-    },
-    "propTypes": Object {
-      "children": Object {
-        "isRequired": true,
-        "type": "string",
-      },
-      "className": Object {
-        "type": "string",
-      },
       "disabled": Object {
         "type": "bool",
       },
       "href": Object {
         "type": "string",
-      },
-      "iconDescription": Object {
-        "type": "string",
-      },
-      "onClick": Object {
-        "type": "func",
-      },
-      "primaryFocus": [Function],
-      "renderIcon": Object {
-        "args": Array [
-          Array [
-            Object {
-              "type": "func",
-            },
-            Object {
-              "type": "object",
-            },
-          ],
-        ],
-        "type": "oneOfType",
       },
     },
   },
