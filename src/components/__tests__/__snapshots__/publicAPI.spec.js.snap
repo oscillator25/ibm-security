@@ -1052,10 +1052,10 @@ Map {
   },
   "ComboButton" => Object {
     "defaultProps": Object {
-      "className": null,
+      "className": "",
       "overflowMenu": Object {
         "ariaLabel": "Menu",
-        "direction": "bottom",
+        "direction": "top",
         "flipped": false,
         "iconDescription": "open and close list of options",
         "light": false,
