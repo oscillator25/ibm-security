@@ -4128,6 +4128,13 @@ a.bx--overflow-menu-options__btn::before {
   display: inline-flex;
 }
 
+.security--combo-button__action {
+  display: block;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .security--combo-button__overflow-menu {
   width: 3rem;
   height: auto;
