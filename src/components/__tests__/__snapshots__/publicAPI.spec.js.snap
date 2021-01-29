@@ -1060,7 +1060,7 @@ Map {
         "iconDescription": "open and close list of options",
         "light": false,
         "menuOffset": [Function],
-        "menuOffsetFlip": [Function],
+        "menuOffsetFlip": undefined,
         "onClick": [Function],
         "onClose": [Function],
         "onKeyDown": [Function],
@@ -1093,6 +1093,10 @@ Map {
         },
         "direction": Object {
           "args": Array [
+            Array [
+              "top",
+              "bottom",
+            ],
             Array [
               "top",
               "bottom",
@@ -1136,6 +1140,44 @@ Map {
                 "type": "func",
               },
             ],
+            Array [
+              Object {
+                "args": Array [
+                  Object {
+                    "left": Object {
+                      "args": Array [
+                        Array [
+                          Object {
+                            "type": "number",
+                          },
+                          Object {
+                            "type": "string",
+                          },
+                        ],
+                      ],
+                      "type": "oneOf",
+                    },
+                    "top": Object {
+                      "args": Array [
+                        Array [
+                          Object {
+                            "type": "number",
+                          },
+                          Object {
+                            "type": "string",
+                          },
+                        ],
+                      ],
+                      "type": "oneOf",
+                    },
+                  },
+                ],
+                "type": "shape",
+              },
+              Object {
+                "type": "func",
+              },
+            ],
           ],
           "type": "oneOfType",
         },
@@ -1150,6 +1192,44 @@ Map {
                     },
                     "top": Object {
                       "type": "number",
+                    },
+                  },
+                ],
+                "type": "shape",
+              },
+              Object {
+                "type": "func",
+              },
+            ],
+            Array [
+              Object {
+                "args": Array [
+                  Object {
+                    "left": Object {
+                      "args": Array [
+                        Array [
+                          Object {
+                            "type": "number",
+                          },
+                          Object {
+                            "type": "string",
+                          },
+                        ],
+                      ],
+                      "type": "oneOf",
+                    },
+                    "top": Object {
+                      "args": Array [
+                        Array [
+                          Object {
+                            "type": "number",
+                          },
+                          Object {
+                            "type": "string",
+                          },
+                        ],
+                      ],
+                      "type": "oneOf",
                     },
                   },
                 ],
