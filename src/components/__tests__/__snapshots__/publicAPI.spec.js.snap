@@ -1083,21 +1083,138 @@ Map {
         "type": "string",
       },
       "overflowMenu": Object {
-        "ariaLabel": Object {
-          "type": "string",
-        },
-        "children": Object {
-          "type": "node",
-        },
-        "className": Object {
-          "type": "string",
-        },
+        "args": Array [
+          Object {
+            "ariaLabel": Object {
+              "type": "string",
+            },
+            "children": Object {
+              "type": "node",
+            },
+            "className": Object {
+              "type": "string",
+            },
+            "direction": Object {
+              "args": Array [
+                Array [
+                  "top",
+                  "bottom",
+                ],
+              ],
+              "type": "oneOf",
+            },
+            "flipped": Object {
+              "type": "bool",
+            },
+            "iconClass": Object {
+              "type": "string",
+            },
+            "iconDescription": Object {
+              "isRequired": true,
+              "type": "string",
+            },
+            "id": Object {
+              "type": "string",
+            },
+            "light": Object {
+              "type": "bool",
+            },
+            "menuOffset": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "left": Object {
+                          "type": "number",
+                        },
+                        "top": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+            "menuOffsetFlip": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "left": Object {
+                          "type": "number",
+                        },
+                        "top": Object {
+                          "type": "number",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  Object {
+                    "type": "func",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+            "menuOptionsClass": Object {
+              "type": "string",
+            },
+            "onClick": Object {
+              "type": "func",
+            },
+            "onClose": Object {
+              "type": "func",
+            },
+            "onFocus": Object {
+              "type": "func",
+            },
+            "onKeyDown": Object {
+              "type": "func",
+            },
+            "onOpen": Object {
+              "type": "func",
+            },
+            "open": Object {
+              "type": "bool",
+            },
+            "renderIcon": Object {
+              "args": Array [
+                Array [
+                  Object {
+                    "type": "func",
+                  },
+                  Object {
+                    "type": "object",
+                  },
+                ],
+              ],
+              "type": "oneOfType",
+            },
+            "selectorPrimaryFocus": Object {
+              "type": "string",
+            },
+            "size": Object {
+              "args": Array [
+                Array [
+                  "sm",
+                  "xl",
+                ],
+              ],
+              "type": "oneOf",
+            },
+          },
+        ],
         "direction": Object {
           "args": Array [
-            Array [
-              "top",
-              "bottom",
-            ],
             Array [
               "top",
               "bottom",
@@ -1105,42 +1222,8 @@ Map {
           ],
           "type": "oneOf",
         },
-        "flipped": Object {
-          "type": "bool",
-        },
-        "iconClass": Object {
-          "type": "string",
-        },
-        "iconDescription": Object {
-          "isRequired": true,
-          "type": "string",
-        },
-        "id": Object {
-          "type": "string",
-        },
-        "light": Object {
-          "type": "bool",
-        },
         "menuOffset": Object {
           "args": Array [
-            Array [
-              Object {
-                "args": Array [
-                  Object {
-                    "left": Object {
-                      "type": "number",
-                    },
-                    "top": Object {
-                      "type": "number",
-                    },
-                  },
-                ],
-                "type": "shape",
-              },
-              Object {
-                "type": "func",
-              },
-            ],
             Array [
               Object {
                 "args": Array [
@@ -1189,24 +1272,6 @@ Map {
                 "args": Array [
                   Object {
                     "left": Object {
-                      "type": "number",
-                    },
-                    "top": Object {
-                      "type": "number",
-                    },
-                  },
-                ],
-                "type": "shape",
-              },
-              Object {
-                "type": "func",
-              },
-            ],
-            Array [
-              Object {
-                "args": Array [
-                  Object {
-                    "left": Object {
                       "args": Array [
                         Array [
                           Object {
@@ -1238,40 +1303,6 @@ Map {
               },
               Object {
                 "type": "func",
-              },
-            ],
-          ],
-          "type": "oneOfType",
-        },
-        "menuOptionsClass": Object {
-          "type": "string",
-        },
-        "onClick": Object {
-          "type": "func",
-        },
-        "onClose": Object {
-          "type": "func",
-        },
-        "onFocus": Object {
-          "type": "func",
-        },
-        "onKeyDown": Object {
-          "type": "func",
-        },
-        "onOpen": Object {
-          "type": "func",
-        },
-        "open": Object {
-          "type": "bool",
-        },
-        "renderIcon": Object {
-          "args": Array [
-            Array [
-              Object {
-                "type": "func",
-              },
-              Object {
-                "type": "object",
               },
             ],
           ],
@@ -1280,15 +1311,7 @@ Map {
         "selectorPrimaryFocus": Object {
           "type": "string",
         },
-        "size": Object {
-          "args": Array [
-            Array [
-              "sm",
-              "xl",
-            ],
-          ],
-          "type": "oneOf",
-        },
+        "type": "shape",
       },
     },
   },
@@ -1296,6 +1319,7 @@ Map {
     "defaultProps": Object {
       "disabled": null,
       "href": null,
+      "renderIcon": null,
     },
     "propTypes": Object {
       "children": Object {
@@ -1307,6 +1331,19 @@ Map {
       },
       "href": Object {
         "type": "string",
+      },
+      "renderIcon": Object {
+        "args": Array [
+          Array [
+            Object {
+              "type": "func",
+            },
+            Object {
+              "type": "object",
+            },
+          ],
+        ],
+        "type": "oneOfType",
       },
     },
   },

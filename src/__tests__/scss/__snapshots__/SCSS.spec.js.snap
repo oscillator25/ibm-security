@@ -4168,6 +4168,10 @@ a.bx--overflow-menu-options__btn::before {
   max-width: none;
 }
 
+.security--combo-button__overflow-menu__item__icon {
+  margin-left: auto;
+}
+
 .security--button--ghost-danger {
   color: var(--text-01, #f4f4f4);
 }

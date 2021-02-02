@@ -14,12 +14,7 @@ exports[`ComboButton renders a combo button with children and an overflow menu 1
       tabindex="0"
       type="button"
     >
-      <span
-        class="security--combo-button__action"
-        title="Primary task"
-      >
-        Primary task
-      </span>
+      Primary task
       <svg
         aria-hidden="true"
         class="bx--btn__icon"
@@ -77,12 +72,7 @@ exports[`ComboButton renders a combo button without an overflow menu 1`] = `
       tabindex="0"
       type="button"
     >
-      <span
-        class="security--combo-button__action"
-        title="Primary task"
-      >
-        Primary task
-      </span>
+      Primary task
       <svg
         aria-hidden="true"
         class="bx--btn__icon"
