@@ -57,68 +57,49 @@ const source = {
 const createAdapter = ({ source, target, transformer }) => {
   console.log({ source, target });
 
-  const { propTypes, defaultProps } = transformer(source);
+  const transform = transformer();
+
+  const map = (source, target) => {
+    const props = {};
+
+    Object.entries(source).forEach(([prop, value]) => {
+      props[prop] =
+        typeof value === 'string' ? target[value] : map(value, target);
+    });
+
+    return props;
+  };
 
   return {
-    adapt: props => {
-      console.log(props);
-    },
-    propTypes: merge(target.propTypes, propTypes),
-    defaultProps: merge(target.defaultProps, defaultProps),
+    adapt: props => map(transform, props),
+    propTypes: merge(target.propTypes, map(transform, source.propTypes)),
+    defaultProps: merge(
+      target.defaultProps,
+      map(transform, source.defaultProps)
+    ),
   };
 };
 
-const adapter = createAdapter({
+const { adapt, defaultProps, propTypes } = createAdapter({
   source,
   target: CarbonComboButton,
-  transformer: ({ defaultProps, propTypes }) => ({
-    propTypes: {
-      children: propTypes.children,
-      className: propTypes.className,
-      overflowMenu: {
-        direction: propTypes.direction,
-        menuOffset: propTypes.menuOffset,
-        menuOffsetFlip: propTypes.menuOffsetFlip,
-        selectorPrimaryFocus: propTypes.selectorPrimaryFocus,
-      },
-    },
-    defaultProps: {
-      className: defaultProps.className,
-      overflowMenu: {
-        direction: defaultProps.direction,
-        menuOffset: defaultProps.menuOffset,
-        menuOffsetFlip: defaultProps.menuOffsetFlip,
-        selectorPrimaryFocus: defaultProps.selectorPrimaryFocus,
-      },
+  transformer: () => ({
+    children: 'children',
+    className: 'className',
+    overflowMenu: {
+      direction: 'direction',
+      menuOffset: 'menuOffset',
+      menuOffsetFlip: 'menuOffsetFlip',
+      selectorPrimaryFocus: 'selectorPrimaryFocus',
     },
   }),
 });
 
-const ComboButton = ({
-  children,
-  className,
-  direction,
-  menuOffset,
-  menuOffsetFlip,
-  selectorPrimaryFocus,
-  ...other
-}) => (
-  <CarbonComboButton
-    overflowMenu={{
-      direction,
-      menuOffset,
-      menuOffsetFlip,
-      selectorPrimaryFocus,
-    }}
-    {...other}
-  >
-    {children}
-  </CarbonComboButton>
-);
-
-const { defaultProps, propTypes } = adapter;
+const ComboButton = props => <CarbonComboButton {...adapt(props)} />;
 
 ComboButton.propTypes = propTypes;
 ComboButton.defaultProps = defaultProps;
+
+console.log(ComboButton.defaultProps);
 
 export default ComboButton;

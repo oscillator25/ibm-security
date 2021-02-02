@@ -1052,6 +1052,7 @@ Map {
   },
   "ComboButton" => Object {
     "defaultProps": Object {
+      "children": undefined,
       "className": "",
       "overflowMenu": Object {
         "ariaLabel": "Menu",
