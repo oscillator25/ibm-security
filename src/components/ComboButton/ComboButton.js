@@ -4,7 +4,6 @@
  */
 
 import { ComboButton as CarbonComboButton } from '@carbon/ibm-cloud-cognitive-security/lib/ComboButton';
-import merge from 'deepmerge';
 
 import {
   func,
@@ -18,6 +17,7 @@ import {
 
 import React from 'react';
 
+import createAdapter from '../../tools/createAdapter';
 import { TooltipDirection } from '../IconButton/IconButton';
 
 const { BOTTOM, TOP } = TooltipDirection;
@@ -54,32 +54,6 @@ const source = {
   },
 };
 
-const createAdapter = ({ source, target, transformer }) => {
-  console.log({ source, target });
-
-  const transform = transformer();
-
-  const map = (source, target) => {
-    const props = {};
-
-    Object.entries(source).forEach(([prop, value]) => {
-      props[prop] =
-        typeof value === 'string' ? target[value] : map(value, target);
-    });
-
-    return props;
-  };
-
-  return {
-    adapt: props => map(transform, props),
-    propTypes: merge(target.propTypes, map(transform, source.propTypes)),
-    defaultProps: merge(
-      target.defaultProps,
-      map(transform, source.defaultProps)
-    ),
-  };
-};
-
 const { adapt, defaultProps, propTypes } = createAdapter({
   source,
   target: CarbonComboButton,
@@ -99,7 +73,5 @@ const ComboButton = props => <CarbonComboButton {...adapt(props)} />;
 
 ComboButton.propTypes = propTypes;
 ComboButton.defaultProps = defaultProps;
-
-console.log(ComboButton.defaultProps);
 
 export default ComboButton;

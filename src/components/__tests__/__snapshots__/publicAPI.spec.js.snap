@@ -1052,16 +1052,15 @@ Map {
   },
   "ComboButton" => Object {
     "defaultProps": Object {
-      "children": undefined,
       "className": "",
       "overflowMenu": Object {
         "ariaLabel": "Menu",
-        "direction": "top",
+        "direction": "bottom",
         "flipped": false,
         "iconDescription": "open and close list of options",
         "light": false,
         "menuOffset": [Function],
-        "menuOffsetFlip": undefined,
+        "menuOffsetFlip": [Function],
         "onClick": [Function],
         "onClose": [Function],
         "onKeyDown": [Function],
@@ -1213,104 +1212,6 @@ Map {
             },
           },
         ],
-        "direction": Object {
-          "args": Array [
-            Array [
-              "top",
-              "bottom",
-            ],
-          ],
-          "type": "oneOf",
-        },
-        "menuOffset": Object {
-          "args": Array [
-            Array [
-              Object {
-                "args": Array [
-                  Object {
-                    "left": Object {
-                      "args": Array [
-                        Array [
-                          Object {
-                            "type": "number",
-                          },
-                          Object {
-                            "type": "string",
-                          },
-                        ],
-                      ],
-                      "type": "oneOf",
-                    },
-                    "top": Object {
-                      "args": Array [
-                        Array [
-                          Object {
-                            "type": "number",
-                          },
-                          Object {
-                            "type": "string",
-                          },
-                        ],
-                      ],
-                      "type": "oneOf",
-                    },
-                  },
-                ],
-                "type": "shape",
-              },
-              Object {
-                "type": "func",
-              },
-            ],
-          ],
-          "type": "oneOfType",
-        },
-        "menuOffsetFlip": Object {
-          "args": Array [
-            Array [
-              Object {
-                "args": Array [
-                  Object {
-                    "left": Object {
-                      "args": Array [
-                        Array [
-                          Object {
-                            "type": "number",
-                          },
-                          Object {
-                            "type": "string",
-                          },
-                        ],
-                      ],
-                      "type": "oneOf",
-                    },
-                    "top": Object {
-                      "args": Array [
-                        Array [
-                          Object {
-                            "type": "number",
-                          },
-                          Object {
-                            "type": "string",
-                          },
-                        ],
-                      ],
-                      "type": "oneOf",
-                    },
-                  },
-                ],
-                "type": "shape",
-              },
-              Object {
-                "type": "func",
-              },
-            ],
-          ],
-          "type": "oneOfType",
-        },
-        "selectorPrimaryFocus": Object {
-          "type": "string",
-        },
         "type": "shape",
       },
     },

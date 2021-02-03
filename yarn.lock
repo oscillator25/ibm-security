@@ -1953,10 +1953,10 @@
     "@carbon/import-once" "^10.4.0"
     "@carbon/layout" "^10.15.0"
 
-"@carbon/ibm-cloud-cognitive-security@^0.4.0":
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/@carbon/ibm-cloud-cognitive-security/-/ibm-cloud-cognitive-security-0.4.0.tgz#441d0972bac6586ace49d9e340d71f9a71adce1b"
-  integrity sha512-B4/d6BCGhrSpUTm60Ds6XzKmzv/mrKjXrMKPhSz0yFEK56iow88zvZ4SGEhW66KVeFeBS8rskTnVnyee/ayjNg==
+"@carbon/ibm-cloud-cognitive-security@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@carbon/ibm-cloud-cognitive-security/-/ibm-cloud-cognitive-security-0.4.1.tgz#13db2c86fe7f113edf687b0ab499c7919e0cae00"
+  integrity sha512-CagzaW+tLeNv3NI0xnJpusPdh5Q5A0RDkK4w55jZDXZOG1XAWnp/uHB3ItrDRGpLv1m2xTC5Ceiuta0yQll0nQ==
   dependencies:
     "@babel/runtime" "^7.11.2"
     "@carbon/icons-react" "^10.23.0"
