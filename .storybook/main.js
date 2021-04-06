@@ -1,15 +1,14 @@
 /**
  * @file Configuration.
- * @copyright IBM Security 2020
+ * @copyright IBM Security 2020 - 2021
  */
 
-const { sync } = require('git-branch');
 const { merge } = require('webpack-merge');
-
 const { BRANCH, CIRCLE_BRANCH } = process.env;
 
 // Pass the branch name from Netlify, CircleCI, or the local branch.
-process.env.STORYBOOK_BRANCH = BRANCH || CIRCLE_BRANCH || sync();
+process.env.STORYBOOK_BRANCH =
+  BRANCH || CIRCLE_BRANCH || require('git-branch').sync();
 
 module.exports = {
   addons: [
@@ -35,9 +34,12 @@ module.exports = {
               'style-loader',
               'css-loader',
               {
-                loader: 'fast-sass-loader',
+                loader: 'sass-loader',
                 options: {
-                  includePaths: ['node_modules'],
+                  implementation: require('sass'),
+                  sassOptions: {
+                    includePaths: ['node_modules'],
+                  },
                 },
               },
             ],
