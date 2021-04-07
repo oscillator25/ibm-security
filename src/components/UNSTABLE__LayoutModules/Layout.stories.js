@@ -14,7 +14,9 @@ import {
 
 import { layout03, layout04 } from '@carbon/layout';
 
+import { settings } from 'carbon-components';
 import { Grid, Row, Column } from 'carbon-components-react';
+
 import React from 'react';
 
 import { disableCentered, patterns } from '../../../.storybook';
@@ -68,6 +70,10 @@ export default {
     story => (
       <>
         <UIShell />
+
+        <div className={`${settings.prefix}--css-grid`}>
+          {`div.${settings.prefix}--css-grid`}
+        </div>
 
         <Grid>{story()}</Grid>
       </>
