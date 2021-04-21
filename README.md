@@ -22,15 +22,16 @@ If you only want to try out Carbon for IBM Security, you can also use
 
 If you're trying to find something specific, here's a full list of packages that we support!
 
-| Package name                                                                                           | Description                          |
-| ------------------------------------------------------------------------------------------------------ | ------------------------------------ |
-| [`carbon-components`](https://github.com/carbon-design-system/carbon/tree/main/packages/components)    | Carbon component styles              |
-| [`carbon-components-react`](https://github.com/carbon-design-system/carbon/tree/main/packages/react)   | Carbon React components              |
-| [`@carbon/colors`](https://github.com/carbon-design-system/carbon/tree/main/packages/colors)           | Work with IBM Design Language colors |
-| [`@carbon/grid`](https://github.com/carbon-design-system/carbon/tree/main/packages/grid)               | Build layouts using the grid system  |
-| [`@carbon/icons-react`](https://github.com/carbon-design-system/carbon/tree/main/packages/icons-react) | Iconography assets                   |
-| [`@carbon/layout`](https://github.com/carbon-design-system/carbon/tree/main/packages/layout)           | Layout-based units and spacing scale |
-| [`@carbon/type`](https://github.com/carbon-design-system/carbon/tree/main/packages/type)               | Type tokens used alongside IBM Plex  |
+| Package name                                                                                           | Description                                           |
+| ------------------------------------------------------------------------------------------------------ | ----------------------------------------------------- |
+| [`carbon-components`](https://github.com/carbon-design-system/carbon/tree/main/packages/components)    | Carbon component styles                               |
+| [`carbon-components-react`](https://github.com/carbon-design-system/carbon/tree/main/packages/react)   | Carbon React components                               |
+| [`@carbon/colors`](https://github.com/carbon-design-system/carbon/tree/main/packages/colors)           | Work with IBM Design Language colors                  |
+| [`@carbon/grid`](https://github.com/carbon-design-system/carbon/tree/main/packages/grid)               | Build layouts using the grid system                   |
+| [`@carbon/ibm-cloud-cognitive`](https://github.com/carbon-design-system/ibm-cloud-cognitive)           | Carbon-powered React components for Cloud & Cognitive |
+| [`@carbon/icons-react`](https://github.com/carbon-design-system/carbon/tree/main/packages/icons-react) | Iconography assets                                    |
+| [`@carbon/layout`](https://github.com/carbon-design-system/carbon/tree/main/packages/layout)           | Layout-based units and spacing scale                  |
+| [`@carbon/type`](https://github.com/carbon-design-system/carbon/tree/main/packages/type)               | Type tokens used alongside IBM Plex                   |
 
 To install Carbon for IBM Security in your project, you'll need to run one of the following commands using a package manager:
 

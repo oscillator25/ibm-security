@@ -3,6 +3,7 @@
  * @copyright IBM Security 2019 - 2021
  */
 
+import { CLOUD_COGNITIVE } from '../src/vendor/cloud-cognitive/stories';
 import { LIBRARY } from '../src/components/LayoutModules/stories';
 
 // Category labels.
@@ -32,7 +33,7 @@ const ORDER = [
   PAGE_LAYOUTS,
   PATTERNS,
   COMPONENTS,
-  [SECURITY, CARBON],
+  [SECURITY, CLOUD_COGNITIVE, CARBON],
   DEPRECATED,
 ];
 
@@ -51,12 +52,26 @@ const getCategory = (categoryName, storyName) => `${categoryName}/${storyName}`;
 const bindCategory = categoryName => getCategory.bind(this, categoryName);
 
 /**
+ * Returns a formatted string for components subcategories.
+ * @param {string} storyName The story name to format.
+ * @returns {string} The formatted component category and story name.
+ */
+const getComponentsSubcategory = subcategory =>
+  bindCategory(getCategory(COMPONENTS, subcategory));
+
+/**
  * Returns a formatted string for the Carbon components category.
  * @param {string} storyName The story name to format.
  * @returns {string} The formatted Carbon component category and story name.
  */
-const getCarbonCategory = bindCategory(getCategory(COMPONENTS, CARBON));
+const getCarbonCategory = getComponentsSubcategory(CARBON);
 
+/**
+ * Returns a formatted string for the Cloud & Cognitive components category.
+ * @param {string} storyName The story name to format.
+ * @returns {string} The formatted Cloud & Cognitive component category and story name.
+ */
+const getCloudCognitiveCategory = getComponentsSubcategory(CLOUD_COGNITIVE);
 /**
  * Returns a formatted string for the components category.
  * @param {string} storyName The story name to format.
@@ -97,7 +112,7 @@ const getPatternsCategory = bindCategory(PATTERNS);
  * @param {string} storyName The story name to format.
  * @returns {string} The formatted Security component category and story name.
  */
-const getSecurityCategory = bindCategory(getCategory(COMPONENTS, SECURITY));
+const getSecurityCategory = getComponentsSubcategory(SECURITY);
 
 /**
  * Configuration for disabling the centering addon.
@@ -155,6 +170,7 @@ export {
   disableCentered,
   disableCenteredStories,
   getCarbonCategory as carbon,
+  getCloudCognitiveCategory as cloudCognitive,
   getComponentsCategory as components,
   getDeprecatedCategory as deprecated,
   getDocsParameters,

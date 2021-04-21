@@ -279,3 +279,6 @@ export withBackground from './components/UNSTABLE__Background';
 export UNSTABLE__Pagination, {
   PageSelector,
 } from './components/UNSTABLE__Pagination';
+
+// Vendor.
+export CloudCognitive from './vendor/cloud-cognitive';

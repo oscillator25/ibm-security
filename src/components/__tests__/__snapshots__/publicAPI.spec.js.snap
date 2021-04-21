@@ -612,6 +612,2697 @@ Map {
       },
     },
   },
+  "CloudCognitive" => Object {
+    "AboutModal": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "displayName": "AboutModal",
+      "propTypes": Object {
+        "additionalInfo": Object {
+          "args": Array [
+            Object {
+              "args": Array [
+                Object {
+                  "content": Object {
+                    "type": "node",
+                  },
+                  "label": Object {
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+          "type": "arrayOf",
+        },
+        "className": Object {
+          "type": "string",
+        },
+        "content": Object {
+          "isRequired": true,
+          "type": "node",
+        },
+        "copyrightText": Object {
+          "type": "node",
+        },
+        "legalText": Object {
+          "type": "node",
+        },
+        "links": Object {
+          "args": Array [
+            Object {
+              "type": "element",
+            },
+          ],
+          "type": "arrayOf",
+        },
+        "logo": Object {
+          "isRequired": true,
+          "type": "node",
+        },
+        "onClose": Object {
+          "type": "func",
+        },
+        "open": Object {
+          "type": "bool",
+        },
+        "title": Object {
+          "isRequired": true,
+          "type": "node",
+        },
+      },
+      "render": [Function],
+    },
+    "ActionBarItem": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "dangerDescription": "danger",
+        "disabled": false,
+        "tabIndex": 0,
+      },
+      "displayName": "ActionBarItem",
+      "propTypes": Object {
+        "as": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "func",
+              },
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "elementType",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "children": Object {
+          "type": "node",
+        },
+        "className": Object {
+          "type": "string",
+        },
+        "dangerDescription": Object {
+          "type": "string",
+        },
+        "disabled": Object {
+          "type": "bool",
+        },
+        "href": Object {
+          "type": "string",
+        },
+        "iconDescription": Object {
+          "type": "string",
+        },
+        "isSelected": Object {
+          "type": "bool",
+        },
+        "onBlur": Object {
+          "type": "func",
+        },
+        "onClick": Object {
+          "type": "func",
+        },
+        "onFocus": Object {
+          "type": "func",
+        },
+        "onMouseEnter": Object {
+          "type": "func",
+        },
+        "onMouseLeave": Object {
+          "type": "func",
+        },
+        "renderIcon": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "func",
+              },
+              Object {
+                "type": "object",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "role": Object {
+          "type": "string",
+        },
+        "small": [Function],
+        "tabIndex": Object {
+          "type": "number",
+        },
+      },
+      "render": [Function],
+    },
+    "ComboButton": Object {
+      "defaultProps": Object {
+        "className": null,
+        "overflowMenu": Object {
+          "ariaLabel": "open and close list of options",
+          "direction": "bottom",
+          "flipped": false,
+          "iconDescription": "open and close list of options",
+          "light": false,
+          "menuOffset": [Function],
+          "menuOffsetFlip": [Function],
+          "onClick": [Function],
+          "onClose": [Function],
+          "onKeyDown": [Function],
+          "onOpen": [Function],
+          "open": false,
+          "renderIcon": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "render": [Function],
+          },
+          "selectorPrimaryFocus": "[data-overflow-menu-primary-focus]",
+        },
+      },
+      "propTypes": Object {
+        "children": Object {
+          "isRequired": true,
+          "type": "node",
+        },
+        "className": Object {
+          "type": "string",
+        },
+        "overflowMenu": Object {
+          "args": Array [
+            Object {
+              "ariaLabel": Object {
+                "type": "string",
+              },
+              "children": Object {
+                "type": "node",
+              },
+              "className": Object {
+                "type": "string",
+              },
+              "direction": Object {
+                "args": Array [
+                  Array [
+                    "top",
+                    "bottom",
+                  ],
+                ],
+                "type": "oneOf",
+              },
+              "flipped": Object {
+                "type": "bool",
+              },
+              "iconClass": Object {
+                "type": "string",
+              },
+              "iconDescription": Object {
+                "isRequired": true,
+                "type": "string",
+              },
+              "id": Object {
+                "type": "string",
+              },
+              "light": Object {
+                "type": "bool",
+              },
+              "menuOffset": Object {
+                "args": Array [
+                  Array [
+                    Object {
+                      "args": Array [
+                        Object {
+                          "left": Object {
+                            "type": "number",
+                          },
+                          "top": Object {
+                            "type": "number",
+                          },
+                        },
+                      ],
+                      "type": "shape",
+                    },
+                    Object {
+                      "type": "func",
+                    },
+                  ],
+                ],
+                "type": "oneOfType",
+              },
+              "menuOffsetFlip": Object {
+                "args": Array [
+                  Array [
+                    Object {
+                      "args": Array [
+                        Object {
+                          "left": Object {
+                            "type": "number",
+                          },
+                          "top": Object {
+                            "type": "number",
+                          },
+                        },
+                      ],
+                      "type": "shape",
+                    },
+                    Object {
+                      "type": "func",
+                    },
+                  ],
+                ],
+                "type": "oneOfType",
+              },
+              "menuOptionsClass": Object {
+                "type": "string",
+              },
+              "onClick": Object {
+                "type": "func",
+              },
+              "onClose": Object {
+                "type": "func",
+              },
+              "onFocus": Object {
+                "type": "func",
+              },
+              "onKeyDown": Object {
+                "type": "func",
+              },
+              "onOpen": Object {
+                "type": "func",
+              },
+              "open": Object {
+                "type": "bool",
+              },
+              "renderIcon": Object {
+                "args": Array [
+                  Array [
+                    Object {
+                      "type": "func",
+                    },
+                    Object {
+                      "type": "object",
+                    },
+                  ],
+                ],
+                "type": "oneOfType",
+              },
+              "selectorPrimaryFocus": Object {
+                "type": "string",
+              },
+              "size": Object {
+                "args": Array [
+                  Array [
+                    "sm",
+                    "md",
+                    "lg",
+                    "xl",
+                  ],
+                ],
+                "type": "oneOf",
+              },
+            },
+          ],
+          "type": "shape",
+        },
+      },
+    },
+    "ComboButtonItem": Object {
+      "defaultProps": Object {
+        "disabled": null,
+        "href": null,
+        "renderIcon": null,
+      },
+      "propTypes": Object {
+        "children": Object {
+          "isRequired": true,
+          "type": "node",
+        },
+        "disabled": Object {
+          "type": "bool",
+        },
+        "href": Object {
+          "type": "string",
+        },
+        "renderIcon": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "func",
+              },
+              Object {
+                "type": "object",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+      },
+    },
+    "ContextHeader": Object {
+      "displayName": "ContextHeader",
+      "propTypes": Object {
+        "name": Object {
+          "isRequired": true,
+          "type": "string",
+        },
+        "namespace": Object {
+          "isRequired": true,
+          "type": "string",
+        },
+        "task": Object {
+          "isRequired": true,
+          "type": "string",
+        },
+      },
+    },
+    "CreateModal": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "disableSubmit": false,
+        "primaryButtonText": "Create",
+        "secondaryButtonText": "Cancel",
+      },
+      "displayName": "CreateModal",
+      "propTypes": Object {
+        "children": [Function],
+        "className": Object {
+          "type": "string",
+        },
+        "description": Object {
+          "isRequired": true,
+          "type": "node",
+        },
+        "disableSubmit": Object {
+          "type": "bool",
+        },
+        "onClose": Object {
+          "type": "func",
+        },
+        "onSubmit": Object {
+          "type": "func",
+        },
+        "open": Object {
+          "isRequired": true,
+          "type": "bool",
+        },
+        "primaryButtonText": Object {
+          "isRequired": true,
+          "type": "string",
+        },
+        "primaryFocus": Object {
+          "isRequired": true,
+          "type": "node",
+        },
+        "secondaryButtonText": Object {
+          "isRequired": true,
+          "type": "string",
+        },
+        "subtitle": Object {
+          "type": "node",
+        },
+        "title": Object {
+          "isRequired": true,
+          "type": "node",
+        },
+      },
+      "render": [Function],
+    },
+    "EmptyState": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "heading": "Start by adding data assets",
+        "illustrationSize": "lg",
+        "subtext": "Click Upload assets to upload your data",
+      },
+      "displayName": "EmptyState",
+      "propTypes": Object {
+        "actionIcon": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "func",
+              },
+              Object {
+                "type": "object",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "actionText": Object {
+          "type": "string",
+        },
+        "actionType": Object {
+          "args": Array [
+            Array [
+              "primary",
+              "secondary",
+              "tertiary",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "customIllustrationAltText": Object {
+          "type": "string",
+        },
+        "heading": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOfType",
+        },
+        "illustration": Object {
+          "type": "string",
+        },
+        "illustrationSize": Object {
+          "args": Array [
+            Array [
+              "lg",
+              "sm",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "linkText": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "linkUrl": Object {
+          "type": "string",
+        },
+        "onActionEvent": Object {
+          "type": "func",
+        },
+        "subtext": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOfType",
+        },
+      },
+      "render": [Function],
+    },
+    "ErrorEmptyState": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "heading": "Start by adding data assets",
+        "illustrationSize": "lg",
+        "subtext": "Click Upload assets to upload your data",
+      },
+      "displayName": "ErrorEmptyState",
+      "propTypes": Object {
+        "actionIcon": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "func",
+              },
+              Object {
+                "type": "object",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "actionText": Object {
+          "type": "string",
+        },
+        "actionType": Object {
+          "args": Array [
+            Array [
+              "primary",
+              "secondary",
+              "tertiary",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "heading": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOfType",
+        },
+        "illustrationSize": Object {
+          "args": Array [
+            Array [
+              "lg",
+              "sm",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "illustrationTheme": Object {
+          "args": Array [
+            Array [
+              "light",
+              "dark",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "linkText": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "linkUrl": Object {
+          "type": "string",
+        },
+        "onActionEvent": Object {
+          "type": "func",
+        },
+        "subtext": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOfType",
+        },
+      },
+      "render": [Function],
+    },
+    "ExampleComponent": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "boxedBorder": false,
+        "primaryKind": "primary",
+        "secondaryKind": "secondary",
+        "size": "default",
+      },
+      "displayName": "ExampleComponent",
+      "propTypes": Object {
+        "borderColor": Object {
+          "type": "string",
+        },
+        "boxedBorder": Object {
+          "type": "bool",
+        },
+        "className": Object {
+          "type": "string",
+        },
+        "disabled": Object {
+          "type": "bool",
+        },
+        "onPrimaryClick": Object {
+          "type": "func",
+        },
+        "onSecondaryClick": Object {
+          "type": "func",
+        },
+        "primaryButtonLabel": Object {
+          "isRequired": true,
+          "type": "string",
+        },
+        "primaryKind": Object {
+          "args": Array [
+            Array [
+              "primary",
+              "danger",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "secondaryButtonLabel": Object {
+          "isRequired": true,
+          "type": "string",
+        },
+        "secondaryKind": Object {
+          "args": Array [
+            Array [
+              "secondary",
+              "tertiary",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "size": Object {
+          "args": Array [
+            Array [
+              "default",
+              "small",
+              "field",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "style": Object {
+          "type": "object",
+        },
+      },
+      "render": [Function],
+    },
+    "HTTPError403": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "displayName": "HTTPError403",
+      "propTypes": Object {
+        "className": Object {
+          "type": "string",
+        },
+        "description": Object {
+          "type": "string",
+        },
+        "errorCodeLabel": Object {
+          "type": "string",
+        },
+        "links": Object {
+          "args": Array [
+            Object {
+              "args": Array [
+                Object {
+                  "text": Object {
+                    "isRequired": true,
+                    "type": "string",
+                  },
+                  "url": Object {
+                    "isRequired": true,
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+          "type": "arrayOf",
+        },
+        "title": Object {
+          "type": "string",
+        },
+      },
+      "render": [Function],
+    },
+    "HTTPError404": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "displayName": "HTTPError404",
+      "propTypes": Object {
+        "className": Object {
+          "type": "string",
+        },
+        "description": Object {
+          "type": "string",
+        },
+        "errorCodeLabel": Object {
+          "type": "string",
+        },
+        "links": Object {
+          "args": Array [
+            Object {
+              "args": Array [
+                Object {
+                  "text": Object {
+                    "isRequired": true,
+                    "type": "string",
+                  },
+                  "url": Object {
+                    "isRequired": true,
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+          "type": "arrayOf",
+        },
+        "title": Object {
+          "type": "string",
+        },
+      },
+      "render": [Function],
+    },
+    "HTTPErrorOther": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "displayName": "HTTPErrorOther",
+      "propTypes": Object {
+        "className": Object {
+          "type": "string",
+        },
+        "description": Object {
+          "type": "string",
+        },
+        "errorCodeLabel": Object {
+          "type": "string",
+        },
+        "links": Object {
+          "args": Array [
+            Object {
+              "args": Array [
+                Object {
+                  "text": Object {
+                    "isRequired": true,
+                    "type": "string",
+                  },
+                  "url": Object {
+                    "isRequired": true,
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+          "type": "arrayOf",
+        },
+        "title": Object {
+          "type": "string",
+        },
+      },
+      "render": [Function],
+    },
+    "ImportModal": Object {
+      "defaultProps": Object {
+        "defaultErrorBody": "",
+        "errorHeader": "",
+        "fetchErrorBody": "",
+        "fetchErrorHeader": "",
+        "fileDropHeader": "",
+        "fileDropLabel": "",
+        "fileUploadLabel": "",
+        "inputButtonText": "",
+        "inputHeader": "",
+        "inputId": "",
+        "inputLabel": "",
+        "inputPlaceholder": "",
+        "invalidFileTypeErrorBody": "",
+        "invalidFileTypeErrorHeader": "",
+        "maxFileSize": Infinity,
+        "maxFileSizeErrorBody": "",
+        "maxFileSizeErrorHeader": "",
+        "modalBody": "",
+        "modalHeading": "",
+        "onRequestClose": [Function],
+        "onRequestSubmit": [Function],
+        "open": true,
+        "primaryButtonText": "",
+        "secondaryButtonText": "",
+        "validFileTypes": Array [],
+      },
+      "displayName": "ImportModal",
+      "propTypes": Object {
+        "defaultErrorBody": Object {
+          "type": "string",
+        },
+        "errorHeader": Object {
+          "type": "string",
+        },
+        "fetchErrorBody": Object {
+          "type": "string",
+        },
+        "fetchErrorHeader": Object {
+          "type": "string",
+        },
+        "fileDropHeader": Object {
+          "type": "string",
+        },
+        "fileDropLabel": Object {
+          "type": "string",
+        },
+        "fileUploadLabel": Object {
+          "type": "string",
+        },
+        "inputButtonText": Object {
+          "type": "string",
+        },
+        "inputHeader": Object {
+          "type": "string",
+        },
+        "inputId": Object {
+          "type": "string",
+        },
+        "inputLabel": Object {
+          "type": "string",
+        },
+        "inputPlaceholder": Object {
+          "type": "string",
+        },
+        "invalidFileTypeErrorBody": Object {
+          "type": "string",
+        },
+        "invalidFileTypeErrorHeader": Object {
+          "type": "string",
+        },
+        "maxFileSize": Object {
+          "type": "number",
+        },
+        "maxFileSizeErrorBody": Object {
+          "type": "string",
+        },
+        "maxFileSizeErrorHeader": Object {
+          "type": "string",
+        },
+        "modalBody": Object {
+          "type": "string",
+        },
+        "modalHeading": Object {
+          "type": "string",
+        },
+        "onRequestClose": Object {
+          "type": "func",
+        },
+        "onRequestSubmit": Object {
+          "type": "func",
+        },
+        "open": Object {
+          "type": "bool",
+        },
+        "primaryButtonText": Object {
+          "type": "string",
+        },
+        "secondaryButtonText": Object {
+          "type": "string",
+        },
+        "validFileTypes": Object {
+          "type": "array",
+        },
+      },
+    },
+    "ModifiedTabs": Object {
+      "defaultProps": Object {
+        "newTabContent": "Your new tab will be here soon",
+        "newTabLabel": "New tab",
+        "onCloseTab": undefined,
+        "onNewTab": undefined,
+        "tabs": Array [
+          Object {
+            "content": <div>
+              Iam am the content of tab 1.
+            </div>,
+            "id": "tab-1",
+            "label": "Tab 1",
+            "unsavedContent": false,
+          },
+        ],
+      },
+      "displayName": "ModifiedTabs",
+      "propTypes": Object {
+        "newTabContent": Object {
+          "type": "object",
+        },
+        "newTabLabel": Object {
+          "type": "string",
+        },
+        "onCloseTab": Object {
+          "type": "func",
+        },
+        "onNewTab": Object {
+          "type": "func",
+        },
+        "tabs": Object {
+          "type": "array",
+        },
+      },
+    },
+    "NoDataEmptyState": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "heading": "Start by adding data assets",
+        "illustrationSize": "lg",
+        "subtext": "Click Upload assets to upload your data",
+      },
+      "displayName": "NoDataEmptyState",
+      "propTypes": Object {
+        "actionIcon": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "func",
+              },
+              Object {
+                "type": "object",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "actionText": Object {
+          "type": "string",
+        },
+        "actionType": Object {
+          "args": Array [
+            Array [
+              "primary",
+              "secondary",
+              "tertiary",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "heading": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOfType",
+        },
+        "illustrationSize": Object {
+          "args": Array [
+            Array [
+              "lg",
+              "sm",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "illustrationTheme": Object {
+          "args": Array [
+            Array [
+              "light",
+              "dark",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "linkText": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "linkUrl": Object {
+          "type": "string",
+        },
+        "onActionEvent": Object {
+          "type": "func",
+        },
+        "subtext": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOfType",
+        },
+      },
+      "render": [Function],
+    },
+    "NoTagsEmptyState": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "heading": "Start by adding data assets",
+        "illustrationSize": "lg",
+        "subtext": "Click Upload assets to upload your data",
+      },
+      "displayName": "NoTagsEmptyState",
+      "propTypes": Object {
+        "actionIcon": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "func",
+              },
+              Object {
+                "type": "object",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "actionText": Object {
+          "type": "string",
+        },
+        "actionType": Object {
+          "args": Array [
+            Array [
+              "primary",
+              "secondary",
+              "tertiary",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "heading": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOfType",
+        },
+        "illustrationSize": Object {
+          "args": Array [
+            Array [
+              "lg",
+              "sm",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "illustrationTheme": Object {
+          "args": Array [
+            Array [
+              "light",
+              "dark",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "linkText": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "linkUrl": Object {
+          "type": "string",
+        },
+        "onActionEvent": Object {
+          "type": "func",
+        },
+        "subtext": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOfType",
+        },
+      },
+      "render": [Function],
+    },
+    "NotFoundEmptyState": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "heading": "Start by adding data assets",
+        "illustrationSize": "lg",
+        "subtext": "Click Upload assets to upload your data",
+      },
+      "displayName": "NotFoundEmptyState",
+      "propTypes": Object {
+        "actionIcon": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "func",
+              },
+              Object {
+                "type": "object",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "actionText": Object {
+          "type": "string",
+        },
+        "actionType": Object {
+          "args": Array [
+            Array [
+              "primary",
+              "secondary",
+              "tertiary",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "heading": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOfType",
+        },
+        "illustrationSize": Object {
+          "args": Array [
+            Array [
+              "lg",
+              "sm",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "illustrationTheme": Object {
+          "args": Array [
+            Array [
+              "light",
+              "dark",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "linkText": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "linkUrl": Object {
+          "type": "string",
+        },
+        "onActionEvent": Object {
+          "type": "func",
+        },
+        "subtext": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOfType",
+        },
+      },
+      "render": [Function],
+    },
+    "NotificationsEmptyState": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "heading": "Start by adding data assets",
+        "illustrationSize": "lg",
+        "subtext": "Click Upload assets to upload your data",
+      },
+      "displayName": "NotificationsEmptyState",
+      "propTypes": Object {
+        "actionIcon": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "func",
+              },
+              Object {
+                "type": "object",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "actionText": Object {
+          "type": "string",
+        },
+        "actionType": Object {
+          "args": Array [
+            Array [
+              "primary",
+              "secondary",
+              "tertiary",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "heading": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOfType",
+        },
+        "illustrationSize": Object {
+          "args": Array [
+            Array [
+              "lg",
+              "sm",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "illustrationTheme": Object {
+          "args": Array [
+            Array [
+              "light",
+              "dark",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "linkText": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "linkUrl": Object {
+          "type": "string",
+        },
+        "onActionEvent": Object {
+          "type": "func",
+        },
+        "subtext": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOfType",
+        },
+      },
+      "render": [Function],
+    },
+    "NotificationsPanel": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "daysAgoText": [Function],
+        "dismissAllLabel": "Dismiss all",
+        "dismissSingleNotificationIconDescription": "Dismiss",
+        "doNotDisturbLabel": "Do not disturb",
+        "emptyStateLabel": "You do not have any notifications",
+        "hourAgoText": [Function],
+        "hoursAgoText": [Function],
+        "minuteAgoText": [Function],
+        "minutesAgoText": [Function],
+        "monthAgoText": [Function],
+        "monthsAgoText": [Function],
+        "nowText": "Now",
+        "onDismissAllNotifications": [Function],
+        "onDismissSingleNotification": [Function],
+        "previousLabel": "Previous",
+        "readLessLabel": "Read less",
+        "readMoreLabel": "Read more",
+        "secondsAgoText": [Function],
+        "settingsIconDescription": "Settings",
+        "title": "Notifications",
+        "todayLabel": "Today",
+        "viewAllLabel": [Function],
+        "yearAgoText": [Function],
+        "yearsAgoText": [Function],
+        "yesterdayAtText": [Function],
+        "yesterdayLabel": "Yesterday",
+      },
+      "displayName": "NotificationsPanel",
+      "propTypes": Object {
+        "className": Object {
+          "type": "string",
+        },
+        "data": Object {
+          "args": Array [
+            Object {
+              "args": Array [
+                Object {
+                  "description": Object {
+                    "type": "string",
+                  },
+                  "id": Object {
+                    "args": Array [
+                      Array [
+                        Object {
+                          "type": "string",
+                        },
+                        Object {
+                          "type": "number",
+                        },
+                      ],
+                    ],
+                    "type": "oneOfType",
+                  },
+                  "link": Object {
+                    "args": Array [
+                      Object {
+                        "text": Object {
+                          "type": "string",
+                        },
+                        "url": Object {
+                          "type": "string",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                  "onNotificationClick": Object {
+                    "type": "func",
+                  },
+                  "timestamp": Object {
+                    "args": Array [
+                      [Function],
+                    ],
+                    "type": "instanceOf",
+                  },
+                  "title": Object {
+                    "type": "string",
+                  },
+                  "type": Object {
+                    "args": Array [
+                      Array [
+                        "error",
+                        "warning",
+                        "success",
+                        "informational",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                  "unread": Object {
+                    "type": "bool",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+          "isRequired": true,
+          "type": "arrayOf",
+        },
+        "daysAgoText": Object {
+          "type": "func",
+        },
+        "dismissAllLabel": Object {
+          "type": "string",
+        },
+        "dismissSingleNotificationIconDescription": Object {
+          "type": "string",
+        },
+        "doNotDisturbLabel": Object {
+          "type": "string",
+        },
+        "emptyStateLabel": Object {
+          "type": "string",
+        },
+        "hourAgoText": Object {
+          "type": "func",
+        },
+        "hoursAgoText": Object {
+          "type": "func",
+        },
+        "minuteAgoText": Object {
+          "type": "func",
+        },
+        "minutesAgoText": Object {
+          "type": "func",
+        },
+        "monthAgoText": Object {
+          "type": "func",
+        },
+        "monthsAgoText": Object {
+          "type": "func",
+        },
+        "nowText": Object {
+          "type": "string",
+        },
+        "onClickOutside": Object {
+          "isRequired": true,
+          "type": "func",
+        },
+        "onDismissAllNotifications": Object {
+          "isRequired": true,
+          "type": "func",
+        },
+        "onDismissSingleNotification": Object {
+          "isRequired": true,
+          "type": "func",
+        },
+        "onDoNotDisturbChange": Object {
+          "type": "func",
+        },
+        "onSettingsClick": Object {
+          "type": "func",
+        },
+        "onViewAllClick": Object {
+          "type": "func",
+        },
+        "open": Object {
+          "isRequired": true,
+          "type": "bool",
+        },
+        "previousLabel": Object {
+          "type": "string",
+        },
+        "readLessLabel": Object {
+          "type": "string",
+        },
+        "readMoreLabel": Object {
+          "type": "string",
+        },
+        "secondsAgoText": Object {
+          "type": "func",
+        },
+        "settingsIconDescription": Object {
+          "type": "string",
+        },
+        "title": Object {
+          "type": "string",
+        },
+        "todayLabel": Object {
+          "type": "string",
+        },
+        "viewAllLabel": Object {
+          "type": "func",
+        },
+        "yearAgoText": Object {
+          "type": "func",
+        },
+        "yearsAgoText": Object {
+          "type": "func",
+        },
+        "yesterdayAtText": Object {
+          "type": "func",
+        },
+        "yesterdayLabel": Object {
+          "type": "string",
+        },
+      },
+      "render": [Function],
+    },
+    "PageActionItem": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "dangerDescription": "danger",
+        "disabled": false,
+        "kind": "primary",
+        "tabIndex": 0,
+        "tooltipAlignment": "center",
+        "tooltipPosition": "top",
+      },
+      "displayName": "PageActionItem",
+      "propTypes": Object {
+        "as": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "func",
+              },
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "elementType",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "children": Object {
+          "type": "node",
+        },
+        "className": Object {
+          "type": "string",
+        },
+        "dangerDescription": Object {
+          "type": "string",
+        },
+        "disabled": Object {
+          "type": "bool",
+        },
+        "hasIconOnly": Object {
+          "type": "bool",
+        },
+        "href": Object {
+          "type": "string",
+        },
+        "iconDescription": Object {
+          "type": "string",
+        },
+        "isSelected": Object {
+          "type": "bool",
+        },
+        "kind": Object {
+          "type": "string",
+        },
+        "onBlur": Object {
+          "type": "func",
+        },
+        "onClick": Object {
+          "type": "func",
+        },
+        "onFocus": Object {
+          "type": "func",
+        },
+        "onMouseEnter": Object {
+          "type": "func",
+        },
+        "onMouseLeave": Object {
+          "type": "func",
+        },
+        "renderIcon": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "func",
+              },
+              Object {
+                "type": "object",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "role": Object {
+          "type": "string",
+        },
+        "small": [Function],
+        "tabIndex": Object {
+          "type": "number",
+        },
+        "tooltipAlignment": Object {
+          "args": Array [
+            Array [
+              "start",
+              "center",
+              "end",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "tooltipPosition": Object {
+          "args": Array [
+            Array [
+              "top",
+              "right",
+              "bottom",
+              "left",
+            ],
+          ],
+          "type": "oneOf",
+        },
+      },
+      "render": [Function],
+    },
+    "PageHeader": Object {
+      "defaultProps": Object {
+        "background": false,
+        "className": "",
+        "collapseExpandHeaderLabel": "Toggle expansion",
+        "keepBreadcrumbAndTabs": false,
+        "pageHeaderOffset": 0,
+        "preCollapseTitleRow": false,
+      },
+      "displayName": "PageHeader",
+      "propTypes": Object {
+        "actionBarItems": Object {
+          "args": Array [
+            Array [
+              Object {
+                "args": Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "iconDescription": Object {
+                          "isRequired": true,
+                          "type": "string",
+                        },
+                        "onClick": Object {
+                          "type": "func",
+                        },
+                        "renderIcon": Object {
+                          "args": Array [
+                            Array [
+                              Object {
+                                "type": "func",
+                              },
+                              Object {
+                                "type": "object",
+                              },
+                            ],
+                          ],
+                          "isRequired": true,
+                          "type": "oneOfType",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                ],
+                "type": "arrayOf",
+              },
+              Object {
+                "args": Array [
+                  Object {
+                    "type": "element",
+                  },
+                ],
+                "type": "arrayOf",
+              },
+              Object {
+                "type": "element",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "availableSpace": Object {
+          "type": "node",
+        },
+        "background": Object {
+          "type": "bool",
+        },
+        "breadcrumbItems": Object {
+          "type": "element",
+        },
+        "className": Object {
+          "type": "string",
+        },
+        "collapseExpandHeaderLabel": Object {
+          "type": "string",
+        },
+        "collapseHeader": Object {
+          "type": "bool",
+        },
+        "keepBreadcrumbAndTabs": Object {
+          "type": "bool",
+        },
+        "navigation": Object {
+          "type": "element",
+        },
+        "pageActions": Object {
+          "type": "element",
+        },
+        "pageHeaderOffset": Object {
+          "type": "number",
+        },
+        "preCollapseTitleRow": Object {
+          "type": "bool",
+        },
+        "subtitle": Object {
+          "type": "string",
+        },
+        "tags": Object {
+          "args": Array [
+            Object {
+              "type": "element",
+            },
+          ],
+          "type": "arrayOf",
+        },
+        "title": Object {
+          "type": "string",
+        },
+        "titleIcon": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "func",
+              },
+              Object {
+                "type": "object",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+      },
+    },
+    "RemoveDeleteModal": Object {
+      "defaultProps": Object {
+        "className": "",
+        "iconDescription": "",
+        "id": "",
+        "inputInvalidText": "",
+        "inputLabelText": "",
+        "inputPlaceholderText": "",
+        "onRequestClose": [Function],
+        "onRequestSubmit": [Function],
+        "primaryButtonText": "",
+        "secondaryButtonText": "",
+        "subheader": "",
+        "textConfirmation": false,
+      },
+      "displayName": "RemoveDeleteModal",
+      "propTypes": Object {
+        "body": Object {
+          "isRequired": true,
+          "type": "string",
+        },
+        "className": Object {
+          "type": "string",
+        },
+        "header": Object {
+          "isRequired": true,
+          "type": "string",
+        },
+        "iconDescription": Object {
+          "type": "string",
+        },
+        "inputInvalidText": Object {
+          "type": "string",
+        },
+        "inputLabelText": Object {
+          "type": "string",
+        },
+        "inputPlaceholderText": Object {
+          "type": "string",
+        },
+        "onRequestClose": Object {
+          "type": "func",
+        },
+        "onRequestSubmit": Object {
+          "type": "func",
+        },
+        "open": Object {
+          "isRequired": true,
+          "type": "bool",
+        },
+        "primaryButtonText": Object {
+          "type": "string",
+        },
+        "resource": Object {
+          "isRequired": true,
+          "type": "string",
+        },
+        "secondaryButtonText": Object {
+          "type": "string",
+        },
+        "subheader": Object {
+          "type": "string",
+        },
+        "textConfirmation": Object {
+          "type": "bool",
+        },
+      },
+    },
+    "Saving": Object {
+      "defaultProps": Object {
+        "status": "default",
+        "type": "manual",
+      },
+      "displayName": "Saving",
+      "propTypes": Object {
+        "cancelButtonText": Object {
+          "type": "string",
+        },
+        "className": Object {
+          "type": "string",
+        },
+        "defaultIconDescription": Object {
+          "type": "string",
+        },
+        "defaultText": Object {
+          "type": "string",
+        },
+        "failIconDescription": Object {
+          "type": "string",
+        },
+        "failText": Object {
+          "type": "string",
+        },
+        "inProgressIconDescription": Object {
+          "type": "string",
+        },
+        "inProgressText": Object {
+          "type": "string",
+        },
+        "onCancel": Object {
+          "type": "func",
+        },
+        "onSave": Object {
+          "type": "func",
+        },
+        "status": Object {
+          "args": Array [
+            Array [
+              "default",
+              "inprogress",
+              "success",
+              "fail",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "successIconDescription": Object {
+          "type": "string",
+        },
+        "successText": Object {
+          "type": "string",
+        },
+        "type": Object {
+          "args": Array [
+            Array [
+              "manual",
+              "auto",
+            ],
+          ],
+          "type": "oneOf",
+        },
+      },
+    },
+    "SidePanel": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "animateTitle": true,
+        "currentStep": 0,
+        "placement": "right",
+        "size": "md",
+        "slideIn": false,
+      },
+      "displayName": "SidePanel",
+      "propTypes": Object {
+        "actionToolbarButtons": Object {
+          "args": Array [
+            Object {
+              "args": Array [
+                Object {
+                  "icon": Object {
+                    "type": "object",
+                  },
+                  "kind": Object {
+                    "args": Array [
+                      Array [
+                        "ghost",
+                        "tertiary",
+                        "secondary",
+                        "primary",
+                      ],
+                    ],
+                    "type": "oneOf",
+                  },
+                  "label": Object {
+                    "type": "string",
+                  },
+                  "leading": Object {
+                    "type": "bool",
+                  },
+                  "onActionToolbarButtonClick": Object {
+                    "type": "func",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+          "type": "arrayOf",
+        },
+        "actions": Object {
+          "args": Array [
+            Array [
+              [Function],
+              Object {
+                "args": Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "disabled": Object {
+                          "type": "bool",
+                        },
+                        "kind": Object {
+                          "args": Array [
+                            Array [
+                              "ghost",
+                              "secondary",
+                              "primary",
+                            ],
+                          ],
+                          "type": "oneOf",
+                        },
+                        "label": Object {
+                          "type": "string",
+                        },
+                        "loading": Object {
+                          "type": "bool",
+                        },
+                        "onPrimaryActionClick": Object {
+                          "type": "func",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                ],
+                "type": "arrayOf",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "animateTitle": Object {
+          "type": "bool",
+        },
+        "children": Object {
+          "args": Array [
+            Array [
+              Object {
+                "args": Array [
+                  Object {
+                    "type": "node",
+                  },
+                ],
+                "type": "arrayOf",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOfType",
+        },
+        "className": Object {
+          "type": "string",
+        },
+        "condensed": Object {
+          "type": "bool",
+        },
+        "currentStep": Object {
+          "type": "number",
+        },
+        "includeOverlay": Object {
+          "type": "bool",
+        },
+        "labelText": Object {
+          "type": "string",
+        },
+        "onNavigationBack": Object {
+          "type": "func",
+        },
+        "open": Object {
+          "isRequired": true,
+          "type": "bool",
+        },
+        "pageContentSelector": Object {
+          "type": "string",
+        },
+        "placement": Object {
+          "args": Array [
+            Array [
+              "left",
+              "right",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "selectorPrimaryFocus": Object {
+          "type": "string",
+        },
+        "setOpen": Object {
+          "isRequired": true,
+          "type": "func",
+        },
+        "size": Object {
+          "args": Array [
+            Array [
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "max",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "slideIn": Object {
+          "type": "bool",
+        },
+        "subtitleText": Object {
+          "type": "string",
+        },
+        "titleText": Object {
+          "type": "string",
+        },
+      },
+      "render": [Function],
+    },
+    "StatusIcon": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "displayName": "StatusIcon",
+      "propTypes": Object {
+        "className": Object {
+          "type": "string",
+        },
+        "iconDescription": Object {
+          "isRequired": true,
+          "type": "string",
+        },
+        "kind": Object {
+          "args": Array [
+            Array [
+              "fatal",
+              "critical",
+              "major-warning",
+              "minor-warning",
+              "undefined",
+              "unknown",
+              "normal",
+              "info",
+              "in-progress",
+              "running",
+              "pending",
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOf",
+        },
+        "size": Object {
+          "args": Array [
+            Array [
+              "sm",
+              "md",
+              "lg",
+              "xlg",
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOf",
+        },
+        "theme": Object {
+          "args": Array [
+            Array [
+              "light",
+              "dark",
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOf",
+        },
+      },
+      "render": [Function],
+    },
+    "TagSet": Object {
+      "defaultProps": Object {
+        "overflowAlign": "center",
+        "overflowDirection": "bottom",
+        "showAllModalHeading": "All tags",
+        "showAllSearchLabel": "Search all tags",
+        "showAllSearchPlaceHolderText": "Search all tags",
+        "showAllTagsLabel": "View all tags",
+      },
+      "displayName": "TagSet",
+      "propTypes": Object {
+        "children": Object {
+          "args": Array [
+            Object {
+              "type": "element",
+            },
+          ],
+          "type": "arrayOf",
+        },
+        "className": Object {
+          "type": "string",
+        },
+        "maxVisibleTags": Object {
+          "type": "number",
+        },
+        "overflowAlign": Object {
+          "args": Array [
+            Array [
+              "start",
+              "center",
+              "end",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "overflowDirection": Object {
+          "args": Array [
+            Array [
+              "top",
+              "right",
+              "bottom",
+              "left",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "rightAlign": Object {
+          "type": "bool",
+        },
+        "showAllModalHeading": Object {
+          "type": "string",
+        },
+        "showAllSearchLabel": Object {
+          "type": "string",
+        },
+        "showAllSearchPlaceHolderText": Object {
+          "type": "string",
+        },
+        "showAllTagsLabel": Object {
+          "type": "string",
+        },
+      },
+    },
+    "Tearsheet": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "closeIconDescription": "Close",
+        "hasCloseIcon": true,
+        "influencerPosition": "left",
+        "influencerWidth": "narrow",
+        "verticalPosition": "normal",
+      },
+      "displayName": "Tearsheet",
+      "propTypes": Object {
+        "actions": Object {
+          "args": Array [
+            Array [
+              [Function],
+              Object {
+                "args": Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "disabled": Object {
+                          "type": "bool",
+                        },
+                        "kind": Object {
+                          "args": Array [
+                            Array [
+                              "ghost",
+                              "secondary",
+                              "primary",
+                            ],
+                          ],
+                          "type": "oneOf",
+                        },
+                        "label": Object {
+                          "type": "string",
+                        },
+                        "loading": Object {
+                          "type": "bool",
+                        },
+                        "onPrimaryActionClick": Object {
+                          "type": "func",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                ],
+                "type": "arrayOf",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "children": Object {
+          "type": "node",
+        },
+        "className": Object {
+          "type": "string",
+        },
+        "closeIconDescription": Object {
+          "type": "string",
+        },
+        "description": Object {
+          "type": "node",
+        },
+        "hasCloseIcon": Object {
+          "type": "bool",
+        },
+        "influencer": Object {
+          "type": "element",
+        },
+        "influencerPosition": Object {
+          "args": Array [
+            Array [
+              "left",
+              "right",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "influencerWidth": Object {
+          "args": Array [
+            Array [
+              "narrow",
+              "wide",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "label": Object {
+          "type": "node",
+        },
+        "navigation": Object {
+          "type": "element",
+        },
+        "onClose": Object {
+          "type": "func",
+        },
+        "open": Object {
+          "type": "bool",
+        },
+        "preventCloseOnClickOutside": Object {
+          "type": "bool",
+        },
+        "title": Object {
+          "type": "node",
+        },
+        "verticalPosition": Object {
+          "args": Array [
+            Array [
+              "normal",
+              "lower",
+            ],
+          ],
+          "type": "oneOf",
+        },
+      },
+      "render": [Function],
+    },
+    "TearsheetNarrow": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "closeIconDescription": "Close",
+        "hasCloseIcon": true,
+        "verticalPosition": "normal",
+      },
+      "displayName": "TearsheetNarrow",
+      "propTypes": Object {
+        "actions": Object {
+          "args": Array [
+            Array [
+              [Function],
+              Object {
+                "args": Array [
+                  Object {
+                    "args": Array [
+                      Object {
+                        "disabled": Object {
+                          "type": "bool",
+                        },
+                        "kind": Object {
+                          "args": Array [
+                            Array [
+                              "ghost",
+                              "secondary",
+                              "primary",
+                            ],
+                          ],
+                          "type": "oneOf",
+                        },
+                        "label": Object {
+                          "type": "string",
+                        },
+                        "loading": Object {
+                          "type": "bool",
+                        },
+                        "onPrimaryActionClick": Object {
+                          "type": "func",
+                        },
+                      },
+                    ],
+                    "type": "shape",
+                  },
+                ],
+                "type": "arrayOf",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "children": Object {
+          "type": "node",
+        },
+        "className": Object {
+          "type": "string",
+        },
+        "closeIconDescription": Object {
+          "type": "string",
+        },
+        "description": Object {
+          "type": "node",
+        },
+        "hasCloseIcon": Object {
+          "type": "bool",
+        },
+        "label": Object {
+          "type": "node",
+        },
+        "onClose": Object {
+          "type": "func",
+        },
+        "open": Object {
+          "type": "bool",
+        },
+        "preventCloseOnClickOutside": Object {
+          "type": "bool",
+        },
+        "title": Object {
+          "type": "node",
+        },
+        "verticalPosition": Object {
+          "args": Array [
+            Array [
+              "normal",
+              "lower",
+            ],
+          ],
+          "type": "oneOf",
+        },
+      },
+      "render": [Function],
+    },
+    "UnauthorizedEmptyState": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "heading": "Start by adding data assets",
+        "illustrationSize": "lg",
+        "subtext": "Click Upload assets to upload your data",
+      },
+      "displayName": "UnauthorizedEmptyState",
+      "propTypes": Object {
+        "actionIcon": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "func",
+              },
+              Object {
+                "type": "object",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "actionText": Object {
+          "type": "string",
+        },
+        "actionType": Object {
+          "args": Array [
+            Array [
+              "primary",
+              "secondary",
+              "tertiary",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "heading": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOfType",
+        },
+        "illustrationSize": Object {
+          "args": Array [
+            Array [
+              "lg",
+              "sm",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "illustrationTheme": Object {
+          "args": Array [
+            Array [
+              "light",
+              "dark",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "linkText": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "type": "oneOfType",
+        },
+        "linkUrl": Object {
+          "type": "string",
+        },
+        "onActionEvent": Object {
+          "type": "func",
+        },
+        "subtext": Object {
+          "args": Array [
+            Array [
+              Object {
+                "type": "string",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOfType",
+        },
+      },
+      "render": [Function],
+    },
+    "UserProfileImage": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "icon": "user",
+        "size": "xl",
+      },
+      "displayName": "UserProfileImage",
+      "propTypes": Object {
+        "backgroundColor": Object {
+          "args": Array [
+            Array [
+              "light-cyan",
+              "dark-cyan",
+              "light-gray",
+              "dark-gray",
+              "light-green",
+              "dark-green",
+              "light-magenta",
+              "dark-magenta",
+              "light-purple",
+              "dark-purple",
+              "light-teal",
+              "dark-teal",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "className": Object {
+          "type": "string",
+        },
+        "icon": Object {
+          "args": Array [
+            Array [
+              "user",
+              "group",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "image": Object {
+          "type": "string",
+        },
+        "initials": Object {
+          "type": "string",
+        },
+        "size": Object {
+          "args": Array [
+            Array [
+              "xl",
+              "lg",
+              "md",
+              "sm",
+              "xs",
+            ],
+          ],
+          "type": "oneOf",
+        },
+        "theme": Object {
+          "args": Array [
+            Array [
+              "light",
+              "dark",
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOf",
+        },
+      },
+      "render": [Function],
+    },
+    "WebTerminal": Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "className": "",
+        "documentationLinks": Array [],
+      },
+      "displayName": "WebTerminal",
+      "propTypes": Object {
+        "children": Object {
+          "args": Array [
+            Array [
+              Object {
+                "args": Array [
+                  Object {
+                    "type": "node",
+                  },
+                ],
+                "type": "arrayOf",
+              },
+              Object {
+                "type": "node",
+              },
+            ],
+          ],
+          "isRequired": true,
+          "type": "oneOfType",
+        },
+        "className": Object {
+          "type": "string",
+        },
+        "closeTerminal": Object {
+          "isRequired": true,
+          "type": "func",
+        },
+        "documentationLinks": Object {
+          "args": Array [
+            Object {
+              "args": Array [
+                Object {
+                  "href": Object {
+                    "type": "string",
+                  },
+                  "label": Object {
+                    "isRequired": true,
+                    "type": "string",
+                  },
+                  "onClick": Object {
+                    "type": "func",
+                  },
+                  "openInNewTab": Object {
+                    "type": "bool",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+          "type": "arrayOf",
+        },
+        "open": Object {
+          "isRequired": true,
+          "type": "bool",
+        },
+      },
+      "render": [Function],
+    },
+    "pkg": Object {
+      "_silenceWarnings": [Function],
+      "checkComponentEnabled": [Function],
+      "component": null,
+      "feature": null,
+      "isComponentEnabled": [Function],
+      "isComponentPublic": [Function],
+      "isFeatureEnabled": [Function],
+      "isFeaturePublic": [Function],
+      "prefix": "exp",
+      "setAllComponents": [Function],
+      "setAllFeatures": [Function],
+    },
+  },
   "CodeSnippet" => Object {
     "defaultProps": Object {
       "showLessText": "Show less",

@@ -14,6 +14,8 @@
 @import '../src/components/index';
 @import '../src/platform/index';
 
+@import '../src/vendor/cloud-cognitive/index';
+
 // TODO: Remove workaround for https://github.ibm.com/security/design-core-experience/issues/241
 @import 'components/Background/index';
 
