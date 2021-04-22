@@ -8,7 +8,7 @@ import React from 'react';
 import { cloudCognitive } from '../../../.storybook';
 import { dependencies } from '../../../package.json';
 
-import { CloudCognitive } from '../..';
+import { Link, ListItem, UnorderedList, CloudCognitive } from '../..';
 
 const { '@carbon/ibm-cloud-cognitive': version } = dependencies;
 
@@ -17,16 +17,28 @@ const {
 } = CloudCognitive;
 
 const CLOUD_COGNITIVE = 'Cloud & Cognitive';
-const Components = () => (
-  <ul>
-    {Object.keys(component)
-      .filter(key => component[key])
-      .map(component => (
-        <li key={`li__${component}`}>{component}</li>
-      ))}
-  </ul>
+
+const ComponentsList = () => (
+  <>
+    <h3 className="storybook__version">v{version}</h3>
+
+    <UnorderedList>
+      {Object.keys(component)
+        .filter(key => component[key])
+        .map(component => (
+          <ListItem key={`li__${component}`}>
+            <Link
+              href={`https://ibm-cloud-cognitive.netlify.app/?path=/story/cloud-cognitive-released-${component}`}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              {component}
+            </Link>
+          </ListItem>
+        ))}
+    </UnorderedList>
+  </>
 );
 
-export default () => cloudCognitive(version);
-
-export { CLOUD_COGNITIVE, Components };
+export default title => cloudCognitive(title);
+export { CLOUD_COGNITIVE, ComponentsList };

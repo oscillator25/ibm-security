@@ -51,21 +51,27 @@
     color: inherit;
   }
 
-  .storybook__link {
-    text-decoration: none;
+  .storybook {
+    &__link {
+      text-decoration: none;
 
-    // `.storybook/theme/index.js` - `colorSecondary`
-    color: $link-01;
+      // `.storybook/theme/index.js` - `colorSecondary`
+      color: $link-01;
 
-    &--image {
-      transition-duration: $duration--fast-01;
-      transition-property: opacity;
-      transition-timing-function: carbon--motion($name: standard);
+      &--image {
+        transition-duration: $duration--fast-01;
+        transition-property: opacity;
+        transition-timing-function: carbon--motion($name: standard);
 
-      &:focus,
-      &:hover {
-        opacity: 0.9;
+        &:focus,
+        &:hover {
+          opacity: 0.9;
+        }
       }
+    }
+
+    &__version {
+      @include carbon--type-style($name: body-long-01);
     }
   }
 
