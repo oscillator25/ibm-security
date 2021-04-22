@@ -71,7 +71,7 @@
     }
 
     &__version {
-      @include carbon--type-style($name: body-long-01);
+      @include carbon--type-style($name: code-02);
     }
   }
 
