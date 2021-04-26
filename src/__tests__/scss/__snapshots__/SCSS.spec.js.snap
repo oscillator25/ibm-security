@@ -31363,6 +31363,7 @@ strong {
 .exp--notifications-panel__container .exp--notifications-panel__bottom-actions {
   position: sticky;
   bottom: 0;
+  z-index: 2;
   display: flex;
   align-items: center;
   height: 2.5rem;
@@ -31991,7 +31992,29 @@ strong {
 }
 
 .exp--tearsheet.exp--tearsheet--wide .exp--tearsheet__main {
-  background: var(--cds-ui-02, var(--ui-02, #393939));
+  background: var(--cds-ui-background, var(--ui-background, #161616));
+}
+
+.exp--tearsheet.exp--tearsheet--wide .exp--tearsheet__main .bx--text-input,
+.exp--tearsheet.exp--tearsheet--wide .exp--tearsheet__main .bx--text-area,
+.exp--tearsheet.exp--tearsheet--wide .exp--tearsheet__main .bx--search-input,
+.exp--tearsheet.exp--tearsheet--wide .exp--tearsheet__main .bx--select-input,
+.exp--tearsheet.exp--tearsheet--wide .exp--tearsheet__main .bx--dropdown,
+.exp--tearsheet.exp--tearsheet--wide .exp--tearsheet__main .bx--dropdown-list,
+.exp--tearsheet.exp--tearsheet--wide .exp--tearsheet__main .bx--number input[type=\\"number\\"],
+.exp--tearsheet.exp--tearsheet--wide .exp--tearsheet__main .bx--date-picker__input {
+  background-color: var(--cds-field-01, var(--field-01, #262626));
+}
+
+.exp--tearsheet.exp--tearsheet--wide .exp--tearsheet__main .bx--text-input--light,
+.exp--tearsheet.exp--tearsheet--wide .exp--tearsheet__main .bx--text-area--light,
+.exp--tearsheet.exp--tearsheet--wide .exp--tearsheet__main .bx--search--light .bx--search-input,
+.exp--tearsheet.exp--tearsheet--wide .exp--tearsheet__main .bx--select--light .bx--select-input,
+.exp--tearsheet.exp--tearsheet--wide .exp--tearsheet__main .bx--dropdown--light,
+.exp--tearsheet.exp--tearsheet--wide .exp--tearsheet__main .bx--dropdown--light .bx--dropdown-list,
+.exp--tearsheet.exp--tearsheet--wide .exp--tearsheet__main .bx--number--light input[type=\\"number\\"],
+.exp--tearsheet.exp--tearsheet--wide .exp--tearsheet__main .bx--date-picker--light .bx--date-picker__input {
+  background-color: var(--cds-field-02, var(--field-02, #393939));
 }
 
 .exp--tearsheet .exp--tearsheet__buttons {
@@ -31999,7 +32022,7 @@ strong {
 }
 
 .exp--tearsheet.exp--tearsheet--wide .exp--tearsheet__buttons {
-  background: var(--cds-ui-02, var(--ui-02, #393939));
+  background: var(--cds-ui-background, var(--ui-background, #161616));
 }
 "
 `;

@@ -1299,6 +1299,104 @@ Map {
       },
       "render": [Function],
     },
+    "ExportModal": Object {
+      "defaultProps": Object {
+        "error": false,
+        "errorMessage": "",
+        "filename": "",
+        "inputLabel": "",
+        "invalidInputText": "",
+        "loading": false,
+        "loadingMessage": "",
+        "modalBody": "",
+        "modalHeading": "",
+        "onRequestClose": [Function],
+        "onRequestSubmit": [Function],
+        "open": false,
+        "preformattedExtensions": Array [],
+        "preformattedExtensionsLabel": "",
+        "primaryButtonText": "",
+        "secondaryButtonText": "",
+        "successMessage": "",
+        "successful": false,
+        "validExtensions": Array [],
+      },
+      "displayName": "ExportModal",
+      "propTypes": Object {
+        "error": Object {
+          "type": "bool",
+        },
+        "errorMessage": Object {
+          "type": "string",
+        },
+        "filename": Object {
+          "type": "string",
+        },
+        "inputLabel": Object {
+          "type": "string",
+        },
+        "invalidInputText": Object {
+          "type": "string",
+        },
+        "loading": Object {
+          "type": "bool",
+        },
+        "loadingMessage": Object {
+          "type": "string",
+        },
+        "modalBody": Object {
+          "type": "string",
+        },
+        "modalHeading": Object {
+          "type": "string",
+        },
+        "onRequestClose": Object {
+          "type": "func",
+        },
+        "onRequestSubmit": Object {
+          "type": "func",
+        },
+        "open": Object {
+          "type": "bool",
+        },
+        "preformattedExtensions": Object {
+          "args": Array [
+            Object {
+              "args": Array [
+                Object {
+                  "description": Object {
+                    "type": "string",
+                  },
+                  "extension": Object {
+                    "type": "string",
+                  },
+                },
+              ],
+              "type": "shape",
+            },
+          ],
+          "type": "arrayOf",
+        },
+        "preformattedExtensionsLabel": Object {
+          "type": "string",
+        },
+        "primaryButtonText": Object {
+          "type": "string",
+        },
+        "secondaryButtonText": Object {
+          "type": "string",
+        },
+        "successMessage": Object {
+          "type": "string",
+        },
+        "successful": Object {
+          "type": "bool",
+        },
+        "validExtensions": Object {
+          "type": "array",
+        },
+      },
+    },
     "HTTPError403": Object {
       "$$typeof": Symbol(react.forward_ref),
       "displayName": "HTTPError403",
@@ -2337,14 +2435,29 @@ Map {
               },
               Object {
                 "args": Array [
-                  Object {
-                    "type": "element",
-                  },
+                  Array [
+                    [Function],
+                    Object {
+                      "args": Array [
+                        Array [
+                          Object {
+                            "args": Array [
+                              Object {
+                                "type": "element",
+                              },
+                            ],
+                            "type": "arrayOf",
+                          },
+                          Object {
+                            "type": "element",
+                          },
+                        ],
+                      ],
+                      "type": "oneOfType",
+                    },
+                  ],
                 ],
-                "type": "arrayOf",
-              },
-              Object {
-                "type": "element",
+                "type": "oneOfType",
               },
             ],
           ],
@@ -2842,7 +2955,7 @@ Map {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
         "closeIconDescription": "Close",
-        "hasCloseIcon": true,
+        "hasCloseIcon": false,
         "influencerPosition": "left",
         "influencerWidth": "narrow",
         "verticalPosition": "normal",
@@ -2890,9 +3003,6 @@ Map {
             ],
           ],
           "type": "oneOfType",
-        },
-        "children": Object {
-          "type": "node",
         },
         "className": Object {
           "type": "string",
@@ -2961,7 +3071,7 @@ Map {
       "$$typeof": Symbol(react.forward_ref),
       "defaultProps": Object {
         "closeIconDescription": "Close",
-        "hasCloseIcon": true,
+        "hasCloseIcon": false,
         "verticalPosition": "normal",
       },
       "displayName": "TearsheetNarrow",
@@ -3007,9 +3117,6 @@ Map {
             ],
           ],
           "type": "oneOfType",
-        },
-        "children": Object {
-          "type": "node",
         },
         "className": Object {
           "type": "string",
